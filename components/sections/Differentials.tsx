@@ -74,7 +74,7 @@ export default function Differentials() {
         subtitle="Os 8 pilares que sustentam nossa excelência em medicina diagnóstica"
       />
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {differentials.map((item, index) => (
           <motion.div
             key={index}
@@ -83,25 +83,25 @@ export default function Differentials() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <Card className="h-full p-6 hover:shadow-2xl transition-shadow duration-300">
+            <Card className="h-full p-6 hover:shadow-xl transition-all duration-300">
               <div className="flex flex-col items-center text-center h-full">
                 {/* Icon with Gradient Background */}
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-4 shadow-lg`}>
-                  <item.icon className="text-white" size={32} />
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-4 shadow-md`}>
+                  <item.icon className="text-white" size={28} />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-display text-terracota mb-3">
+                <h3 className="text-lg font-display text-terracota mb-2">
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-dark/70 leading-relaxed flex-grow">
+                <p className="text-sm text-dark/70 leading-relaxed flex-grow">
                   {item.description}
                 </p>
 
                 {/* Decorative Element */}
-                <div className="mt-4 w-12 h-1 bg-gradient-to-r from-terracota to-teal rounded-full" />
+                <div className="mt-4 w-10 h-0.5 bg-gradient-to-r from-terracota to-teal rounded-full" />
               </div>
             </Card>
           </motion.div>
@@ -110,16 +110,16 @@ export default function Differentials() {
 
       {/* Bottom CTA */}
       <motion.div
-        className="mt-16 text-center"
+        className="mt-12 md:mt-16 text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.8 }}
       >
-        <p className="text-2xl font-display text-teal mb-4">
+        <p className="text-xl md:text-2xl font-display text-teal mb-3 md:mb-4">
           Precisão com propósito. Diagnóstico é cuidado.
         </p>
-        <p className="text-dark/60 max-w-2xl mx-auto">
+        <p className="text-sm md:text-base text-dark/60 max-w-2xl mx-auto px-4">
           Cada um desses valores se reflete em nosso trabalho diário, 
           garantindo que você receba não apenas um resultado, mas um cuidado completo.
         </p>

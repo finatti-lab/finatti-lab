@@ -1,36 +1,210 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏥 Finatti Medicina Diagnóstica
 
-## Getting Started
+Site institucional moderno e premium para laboratório de patologia em Cianorte-PR.
 
-First, run the development server:
+## 🎨 Design System
+
+### Cores
+- **Terracota** (Principal): `#B5511F`
+- **Areia** (Fundo): `#E0CDBA`
+- **Teal** (Composição): `#30605D`
+- **Branco**: `#FFFFFF`
+- **Texto Escuro**: `#1a1a1a`
+
+### Tipografia
+- **Títulos**: Mefta (adicionar manualmente)
+- **Corpo**: Plus Jakarta Sans (Google Fonts)
+
+## 🚀 Tecnologias
+
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion** (animações)
+- **Lucide React** (ícones)
+
+## 📦 Instalação
 
 ```bash
+# Instalar dependências
+npm install
+
+# Executar em desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build para produção
+npm run build
+
+# Iniciar produção
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 Estrutura do Projeto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+finatti-lab/
+├── app/
+│   ├── layout.tsx          # Layout principal com fontes
+│   ├── page.tsx            # Página principal
+│   └── globals.css         # Estilos globais
+├── components/
+│   ├── ui/                 # Componentes reutilizáveis
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── Section.tsx
+│   │   └── SectionTitle.tsx
+│   └── sections/           # Seções da landing page
+│       ├── Header.tsx      # Header fixo com navegação
+│       ├── Hero.tsx        # Seção hero com overlay
+│       ├── About.tsx       # Sobre nós
+│       ├── Differentials.tsx # 8 diferenciais
+│       ├── Services.tsx    # Serviços/Exames
+│       ├── Team.tsx        # Equipe (fundadores)
+│       ├── Contact.tsx     # Contato + formulário
+│       └── Footer.tsx      # Footer
+├── public/
+│   └── fonts/
+│       └── mefta.woff2     # Fonte Mefta (adicionar)
+└── tailwind.config.ts      # Configuração do Tailwind
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✅ Funcionalidades Implementadas
 
-## Learn More
+### 🎯 Componentes UI
+- ✅ Button com variantes (primary, secondary, outline)
+- ✅ Card com hover elegante
+- ✅ Section com backgrounds personalizados
+- ✅ SectionTitle com animações
 
-To learn more about Next.js, take a look at the following resources:
+### 📱 Seções
+- ✅ **Header**: Fixo, responsivo, com menu mobile
+- ✅ **Hero**: Overlay terracota, stats, scroll indicator
+- ✅ **Sobre Nós**: História dos fundadores, valores
+- ✅ **Diferenciais**: 8 pilares em cards animados
+- ✅ **Serviços**: Grid de serviços com hover
+- ✅ **Equipe**: Cards dos fundadores
+- ✅ **Contato**: Formulário + informações + WhatsApp
+- ✅ **Footer**: Completo com links e redes sociais
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🎨 Design Features
+- ✅ Pattern de cruzes/estrelas decorativo
+- ✅ Animações Framer Motion (fade-in, slide-up)
+- ✅ Navegação suave entre seções
+- ✅ Scrollbar customizada
+- ✅ Gradientes terracota/teal
+- ✅ Mobile-first e totalmente responsivo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔧 Próximos Passos
 
-## Deploy on Vercel
+### 1. Adicionar Fonte Mefta
+Substitua o arquivo `public/fonts/mefta.woff2` pela fonte real Mefta.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2. Adicionar Imagens
+- Hero background: Adicionar imagem de laboratório/microscópio
+- Fotos da equipe: `public/team/izabella.jpg` e `public/team/guilherme.jpg`
+- Logos de certificações (se houver)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 3. Configurar Formulário de Contato
+Atualmente o formulário apenas exibe um alert. Integre com:
+- **EmailJS**: Para envio de emails
+- **API Route do Next.js**: Para processar no backend
+- **Serviço de terceiros**: Como Formspree, SendGrid, etc.
+
+Exemplo com API Route:
+
+```typescript
+// app/api/contact/route.ts
+import { NextResponse } from 'next/server';
+
+export async function POST(request: Request) {
+  const data = await request.json();
+  
+  // Processar envio de email aqui
+  
+  return NextResponse.json({ success: true });
+}
+```
+
+### 4. Adicionar Google Maps
+Substitua o placeholder no componente `Contact.tsx` por um iframe do Google Maps:
+
+```tsx
+<iframe
+  src="https://www.google.com/maps/embed?pb=..."
+  className="w-full h-64 rounded-2xl"
+  loading="lazy"
+/>
+```
+
+### 5. Atualizar Informações de Contato
+Em `components/sections/Contact.tsx` e `Footer.tsx`, atualize:
+- Telefone real
+- Email real
+- Endereço completo
+- Links de redes sociais
+
+### 6. SEO e Meta Tags
+Adicione em `app/layout.tsx`:
+- Open Graph images
+- Twitter cards
+- Canonical URLs
+- Structured data (JSON-LD)
+
+### 7. Analytics
+Adicione Google Analytics ou similar:
+
+```tsx
+// app/layout.tsx
+<Script src="https://www.googletagmanager.com/gtag/js?id=GA_ID" />
+```
+
+## 🎨 Customização
+
+### Cores
+Edite `tailwind.config.ts` para ajustar as cores da marca.
+
+### Conteúdo
+Todo o conteúdo está nos componentes em `components/sections/`. 
+Edite diretamente os textos, valores e informações.
+
+### Animações
+As animações estão configuradas com Framer Motion. 
+Ajuste `duration`, `delay` e `transition` conforme necessário.
+
+## 📱 Responsividade
+
+O site é totalmente responsivo com breakpoints:
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+## 🌐 Deploy
+
+### Vercel (Recomendado)
+```bash
+npm install -g vercel
+vercel
+```
+
+### Netlify
+```bash
+npm run build
+# Deploy a pasta .next
+```
+
+## 📞 Suporte
+
+Para dúvidas sobre o código ou customizações, consulte:
+- [Next.js Docs](https://nextjs.org/docs)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- [Framer Motion Docs](https://www.framer.com/motion/)
+
+## 🙏 Valores
+
+Este site foi desenvolvido refletindo os valores cristãos e o propósito de servir da Finatti Medicina Diagnóstica.
+
+**"Seus olhos em cada exame"** 👁️
+
+---
+
+Desenvolvido com ❤️ para Finatti Medicina Diagnóstica

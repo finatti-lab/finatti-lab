@@ -1,26 +1,80 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  /* Cores customizadas da marca Finatti */
+  --color-terracota: #B5511F;
+  --color-terracota-dark: #9A4419;
+  --color-terracota-light: #C86B3A;
+  
+  --color-areia: #E0CDBA;
+  --color-areia-light: #F0E5D8;
+  --color-areia-dark: #D0BDA8;
+  
+  --color-teal: #30605D;
+  --color-teal-dark: #264A48;
+  --color-teal-light: #3D7773;
+  
+  --color-dark: #1a1a1a;
+  
+  /* Fontes */
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: var(--font-mefta), Georgia, serif;
+}
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a1a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-mefta), Georgia, serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Pattern de cruzes/estrelas decorativo */
+.pattern-crosses {
+  background-image: 
+    radial-gradient(circle at 50% 50%, #B5511F 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, #B5511F 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  opacity: 0.05;
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E0CDBA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B5511F;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9A4419;
 }

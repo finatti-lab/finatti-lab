@@ -24,18 +24,18 @@ export default function Hero() {
         >
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-2 mb-8"
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6 text-sm md:text-base"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <Eye size={20} className="text-white" />
+            <Eye size={18} className="text-white" />
             <span className="text-white font-medium">Seus olhos em cada exame</span>
           </motion.div>
 
           {/* Headline */}
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-display text-white mb-6 leading-tight"
+            className="text-3xl md:text-5xl lg:text-7xl font-display text-white mb-4 md:mb-6 leading-tight px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -47,7 +47,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <motion.p
-            className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-base md:text-xl lg:text-2xl text-white/90 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
@@ -58,23 +58,23 @@ export default function Hero() {
 
           {/* CTAs */}
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 md:gap-4 px-4 max-w-md sm:max-w-none mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-            <Button variant="primary" size="lg" href="#contato">
+            <Button variant="primary" size="lg" href="#contato" className="w-full sm:w-auto">
               Agendar Exame
               <ArrowRight size={20} />
             </Button>
-            <Button variant="outline" size="lg" href="#sobre" className="bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-terracota">
-              Conheça Nossa História
+            <Button variant="outline" size="lg" href="#sobre" className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-terracota">
+              Nossa História
             </Button>
           </motion.div>
 
           {/* Stats */}
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-12 border-t border-white/20"
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-12 md:mt-20 pt-8 md:pt-12 border-t border-white/20 px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
@@ -82,14 +82,14 @@ export default function Hero() {
             {[
               { value: '100%', label: 'Credibilidade' },
               { value: '24h', label: 'Agilidade' },
-              { value: '10+', label: 'Anos de Experiência' },
+              { value: '10+', label: 'Anos' },
               { value: '∞', label: 'Humanidade' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-display text-white mb-2">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-display text-white mb-1 md:mb-2">
                   {stat.value}
                 </div>
-                <div className="text-white/80 text-sm md:text-base">
+                <div className="text-white/80 text-xs md:text-sm lg:text-base">
                   {stat.label}
                 </div>
               </div>

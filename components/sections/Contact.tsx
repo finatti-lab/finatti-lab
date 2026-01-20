@@ -79,7 +79,7 @@ export default function Contact() {
         subtitle="Estamos prontos para atender você com excelência e humanidade"
       />
 
-      <div className="grid lg:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
         {/* Contact Form */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -87,12 +87,12 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="bg-areia/30 rounded-2xl p-8 border border-areia">
-            <h3 className="text-2xl font-display text-terracota mb-6">
+          <div className="bg-areia/30 rounded-2xl p-6 md:p-8 border border-areia">
+            <h3 className="text-xl md:text-2xl font-display text-terracota mb-6">
               Envie sua Mensagem
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <div>
                 <label htmlFor="name" className="block text-dark font-medium mb-2">
                   Nome Completo *
@@ -160,7 +160,7 @@ export default function Contact() {
                 type="submit"
                 variant="primary"
                 size="lg"
-                className="w-full"
+                className="w-full mt-6"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}

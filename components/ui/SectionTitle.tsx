@@ -23,11 +23,11 @@ export default function SectionTitle({
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <h2 className="text-4xl md:text-5xl font-display text-terracota mb-4">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-display text-terracota mb-4">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-lg md:text-xl text-dark/70 max-w-3xl mx-auto">
+        <p className="text-base md:text-lg lg:text-xl text-dark/70 max-w-3xl mx-auto">
           {subtitle}
         </p>
       )}

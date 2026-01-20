@@ -29,20 +29,21 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-br from-dark to-teal-dark text-white">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center md:text-left">
           {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="flex flex-col items-center md:items-start"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-terracota rounded-lg flex items-center justify-center">
                 <span className="text-white font-display text-2xl">F</span>
               </div>
-              <div>
+              <div className="text-left">
                 <h3 className="font-display text-xl">Finatti</h3>
                 <p className="text-sm text-white/70">Medicina Diagnóstica</p>
               </div>

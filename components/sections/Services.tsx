@@ -62,7 +62,7 @@ export default function Services() {
         subtitle="Exames especializados com tecnologia de ponta e olhar humanizado"
       />
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {services.map((service, index) => (
           <motion.div
             key={index}
@@ -71,36 +71,36 @@ export default function Services() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <Card className="h-full p-8 group">
+            <Card className="h-full p-6 group hover:shadow-xl transition-all duration-300">
               {/* Icon */}
-              <div className="w-14 h-14 bg-gradient-to-br from-terracota to-teal rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <service.icon className="text-white" size={28} />
+              <div className="w-16 h-16 bg-gradient-to-br from-terracota to-teal rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                <service.icon className="text-white" size={32} />
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl font-display text-terracota mb-3">
+              <h3 className="text-xl font-display text-terracota mb-3">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="text-dark/70 mb-6 leading-relaxed">
+              <p className="text-dark/70 mb-5 leading-relaxed text-sm">
                 {service.description}
               </p>
 
               {/* Features */}
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-2 mb-5">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center gap-2 text-sm text-dark/60">
-                    <div className="w-1.5 h-1.5 bg-teal rounded-full" />
+                    <div className="w-1.5 h-1.5 bg-teal rounded-full flex-shrink-0" />
                     {feature}
                   </li>
                 ))}
               </ul>
 
               {/* Hover Arrow */}
-              <div className="flex items-center gap-2 text-terracota font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="flex items-center gap-2 text-terracota font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span>Saiba mais</span>
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </div>
             </Card>
           </motion.div>

@@ -8,52 +8,44 @@ import SectionTitle from '../ui/SectionTitle';
 export default function About() {
   return (
     <Section id="sobre" background="white">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        {/* Left Content */}
+      <SectionTitle
+        title="Nossa História"
+        subtitle="Medicina para servir, não para mercantilizar"
+        align="center"
+      />
+
+      <div className="max-w-4xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          className="space-y-6 text-dark/80 leading-relaxed text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <SectionTitle
-            title="Nossa História"
-            subtitle="Medicina para servir, não para mercantilizar"
-            align="left"
-          />
+          <p className="text-lg">
+            A <strong className="text-terracota">Finatti Medicina Diagnóstica</strong> nasceu do sonho de 
+            dois profissionais apaixonados pela medicina: <strong>Dra. Izabella Finatti</strong> e <strong>Guilherme</strong>.
+          </p>
 
-          <div className="space-y-6 text-dark/80 leading-relaxed">
-            <p className="text-lg">
-              A <strong className="text-terracota">Finatti Medicina Diagnóstica</strong> nasceu do sonho de 
-              dois profissionais apaixonados pela medicina: <strong>Dra. Izabella Finatti</strong> e <strong>Guilherme</strong>.
-            </p>
+          <p>
+            Fundada em Cianorte-PR, nossa missão vai além de realizar exames. Acreditamos que 
+            <strong className="text-teal"> diagnóstico é cuidado</strong>, e cada resultado que entregamos 
+            carrega a responsabilidade de impactar vidas.
+          </p>
 
-            <p>
-              Fundada em Cianorte-PR, nossa missão vai além de realizar exames. Acreditamos que 
-              <strong className="text-teal"> diagnóstico é cuidado</strong>, e cada resultado que entregamos 
-              carrega a responsabilidade de impactar vidas.
-            </p>
+          <p>
+            Guiados por <strong>valores cristãos</strong> e pelo compromisso com a excelência, 
+            construímos um laboratório onde credibilidade, agilidade e humanidade caminham juntas. 
+            Aqui, cada exame recebe nossos olhos atentos, nossa dedicação integral.
+          </p>
 
-            <p>
-              Guiados por <strong>valores cristãos</strong> e pelo compromisso com a excelência, 
-              construímos um laboratório onde credibilidade, agilidade e humanidade caminham juntas. 
-              Aqui, cada exame recebe nossos olhos atentos, nossa dedicação integral.
-            </p>
-
-            <p className="text-lg font-semibold text-terracota italic">
-              "Enxergamos o que outros não veem porque olhamos com propósito."
-            </p>
-          </div>
+          <p className="text-xl font-semibold text-terracota italic pt-4">
+            "Enxergamos o que outros não veem porque olhamos com propósito."
+          </p>
         </motion.div>
 
-        {/* Right Content - Values Cards */}
-        <motion.div
-          className="grid gap-6"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
+        {/* Values Cards */}
+        <div className="grid md:grid-cols-3 gap-6">
           {[
             {
               icon: Heart,
@@ -73,25 +65,26 @@ export default function About() {
           ].map((value, index) => (
             <motion.div
               key={index}
-              className="bg-areia/30 rounded-2xl p-6 border border-areia hover:border-terracota transition-all duration-300"
-              whileHover={{ scale: 1.02, backgroundColor: 'rgba(224, 205, 186, 0.5)' }}
+              className="bg-areia/30 rounded-2xl p-6 border border-areia hover:border-terracota transition-all duration-300 hover:shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-terracota rounded-xl flex items-center justify-center flex-shrink-0">
-                  <value.icon className="text-white" size={24} />
+              <div className="flex flex-col items-center text-center">
+                <div className="w-14 h-14 bg-terracota rounded-xl flex items-center justify-center mb-4">
+                  <value.icon className="text-white" size={28} />
                 </div>
-                <div>
-                  <h3 className="text-xl font-display text-terracota mb-2">
-                    {value.title}
-                  </h3>
-                  <p className="text-dark/70">
-                    {value.description}
-                  </p>
-                </div>
+                <h3 className="text-lg font-display text-terracota mb-2">
+                  {value.title}
+                </h3>
+                <p className="text-sm text-dark/70">
+                  {value.description}
+                </p>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </Section>
   );

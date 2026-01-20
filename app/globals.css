@@ -1,30 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
-@theme {
-  /* Cores customizadas da marca Finatti */
-  --color-terracota: #B5511F;
-  --color-terracota-dark: #9A4419;
-  --color-terracota-light: #C86B3A;
-  
-  --color-areia: #E0CDBA;
-  --color-areia-light: #F0E5D8;
-  --color-areia-dark: #D0BDA8;
-  
-  --color-teal: #30605D;
-  --color-teal-dark: #264A48;
-  --color-teal-light: #3D7773;
-  
-  --color-dark: #1a1a1a;
-  
-  /* Fontes */
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-display: Georgia, 'Times New Roman', serif;
-}
-
 :root {
   --background: #ffffff;
   --foreground: #1a1a1a;
+  
+  /* Cores Finatti */
+  --terracota: #B5511F;
+  --terracota-dark: #9A4419;
+  --terracota-light: #C86B3A;
+  
+  --areia: #E0CDBA;
+  --areia-light: #F0E5D8;
+  --areia-dark: #D0BDA8;
+  
+  --teal: #30605D;
+  --teal-dark: #264A48;
+  --teal-light: #3D7773;
+  
+  --dark: #1a1a1a;
 }
 
 * {
@@ -98,4 +92,43 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #9A4419;
+}
+
+/* Utility classes para cores customizadas */
+@layer utilities {
+  /* Text colors */
+  .text-terracota { color: var(--terracota); }
+  .text-terracota-dark { color: var(--terracota-dark); }
+  .text-terracota-light { color: var(--terracota-light); }
+  .text-areia { color: var(--areia); }
+  .text-areia-light { color: var(--areia-light); }
+  .text-areia-dark { color: var(--areia-dark); }
+  .text-teal { color: var(--teal); }
+  .text-teal-dark { color: var(--teal-dark); }
+  .text-teal-light { color: var(--teal-light); }
+  .text-dark { color: var(--dark); }
+  
+  /* Background colors */
+  .bg-terracota { background-color: var(--terracota); }
+  .bg-terracota-dark { background-color: var(--terracota-dark); }
+  .bg-terracota-light { background-color: var(--terracota-light); }
+  .bg-areia { background-color: var(--areia); }
+  .bg-areia-light { background-color: var(--areia-light); }
+  .bg-areia-dark { background-color: var(--areia-dark); }
+  .bg-teal { background-color: var(--teal); }
+  .bg-teal-dark { background-color: var(--teal-dark); }
+  .bg-teal-light { background-color: var(--teal-light); }
+  .bg-dark { background-color: var(--dark); }
+  
+  /* Border colors */
+  .border-terracota { border-color: var(--terracota); }
+  .border-areia { border-color: var(--areia); }
+  .border-areia-light { border-color: var(--areia-light); }
+  .border-teal { border-color: var(--teal); }
+  
+  /* Hover utilities */
+  .hover\:bg-terracota:hover { background-color: var(--terracota); }
+  .hover\:bg-terracota-dark:hover { background-color: var(--terracota-dark); }
+  .hover\:border-terracota:hover { border-color: var(--terracota); }
+  .hover\:text-terracota:hover { color: var(--terracota); }
 }

@@ -27,9 +27,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-dark to-teal-dark text-white">
+    <footer className="bg-gradient-to-br from-dark to-teal-dark text-white w-full">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center md:text-left">
           {/* Brand */}
           <motion.div

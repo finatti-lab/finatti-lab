@@ -6,7 +6,7 @@ import Button from '../ui/Button';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden w-full">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-terracota/90 via-terracota/80 to-teal/70 z-10" />
@@ -16,7 +16,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-30 max-w-7xl mx-auto px-4 md:px-8 py-32 text-center">
+      <div className="relative z-30 max-w-7xl mx-auto px-4 md:px-8 py-32 text-center w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

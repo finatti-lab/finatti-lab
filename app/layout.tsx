@@ -1,25 +1,11 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import localFont from "next/font/local";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-});
-
-// Fonte Mefta será adicionada manualmente depois
-const mefta = localFont({
-  src: [
-    {
-      path: "../public/fonts/mefta.woff2",
-      weight: "600",
-      style: "normal",
-    },
-  ],
-  variable: "--font-mefta",
-  fallback: ["Georgia", "serif"],
 });
 
 export const metadata: Metadata = {
@@ -43,7 +29,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body
-        className={`${jakarta.variable} ${mefta.variable} antialiased`}
+        className={`${jakarta.variable} antialiased`}
+        style={{ fontFamily: 'var(--font-jakarta), system-ui, sans-serif' }}
       >
         {children}
       </body>

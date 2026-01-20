@@ -27,11 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="scroll-smooth w-full">
-      <body
-        className={`${jakarta.variable} antialiased w-full overflow-x-hidden`}
-        style={{ fontFamily: 'var(--font-jakarta), system-ui, sans-serif' }}
-      >
+    <html lang="pt-BR" className="scroll-smooth">
+      <body className={`${jakarta.variable} antialiased`}>
         {children}
       </body>
     </html>

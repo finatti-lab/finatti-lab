@@ -1,18 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
-import Button from '../ui/Button';
-
-const navItems = [
-  { name: 'Início', href: '#hero' },
-  { name: 'Sobre Nós', href: '#sobre' },
-  { name: 'Diferenciais', href: '#diferenciais' },
-  { name: 'Serviços', href: '#servicos' },
-  { name: 'Equipe', href: '#equipe' },
-  { name: 'Contato', href: '#contato' },
-];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,137 +11,92 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
-    setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const navLinks = [
+    { href: '#hero', label: 'Início' },
+    { href: '#sobre', label: 'Sobre Nós' },
+    { href: '#diferenciais', label: 'Diferenciais' },
+    { href: '#servicos', label: 'Serviços' },
+    { href: '#equipe', label: 'Equipe' },
+    { href: '#contato', label: 'Contato' },
+  ];
 
   return (
-    <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg py-4' 
-          : 'bg-transparent py-6'
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white shadow-lg py-4' : 'bg-transparent py-6'
       }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <motion.a
-            href="#hero"
-            className="flex items-center gap-3"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('#hero');
-            }}
-            whileHover={{ scale: 1.05 }}
-          >
-            <div className="w-12 h-12 bg-terracota rounded-lg flex items-center justify-center">
-              <span className="text-white font-display text-2xl">F</span>
+          <a href="#hero" className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-terracota rounded-lg flex items-center justify-center text-white font-bold text-xl">
+              F
             </div>
-            <div className="hidden md:block">
-              <h1 className={`font-display text-xl ${isScrolled ? 'text-terracota' : 'text-white'}`}>
-                Finatti
-              </h1>
-              <p className={`text-xs ${isScrolled ? 'text-dark/60' : 'text-white/80'}`}>
-                Medicina Diagnóstica
-              </p>
+            <div>
+              <h1 className="text-xl font-bold text-terracota">Finatti</h1>
+              <p className="text-xs text-gray-600">Medicina Diagnóstica</p>
             </div>
-          </motion.a>
+          </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
               <a
-                key={item.name}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(item.href);
-                }}
-                className={`font-medium transition-colors hover:text-terracota ${
-                  isScrolled ? 'text-dark' : 'text-white'
-                }`}
+                key={link.href}
+                href={link.href}
+                className="text-gray-700 hover:text-terracota transition-colors font-medium"
               >
-                {item.name}
+                {link.label}
               </a>
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
-            <Button 
-              variant="primary" 
-              size="sm"
-              href="https://wa.me/5544999999999"
-            >
-              <Phone size={18} />
-              WhatsApp
-            </Button>
-          </div>
+          {/* WhatsApp CTA */}
+          <a
+            href="https://wa.me/5544999999999"
+            className="hidden md:flex items-center gap-2 bg-terracota text-white px-4 py-2 rounded-lg hover:bg-terracota-dark transition-colors"
+          >
+            <Phone size={18} />
+            <span>WhatsApp</span>
+          </a>
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden p-2 rounded-lg ${
-              isScrolled ? 'text-dark' : 'text-white'
-            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 text-terracota"
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <motion.div
-            className="lg:hidden bg-white border-t border-areia"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <nav className="flex flex-col py-4 px-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(item.href);
-                  }}
-                  className="py-3 px-4 text-dark font-medium hover:bg-areia rounded-lg transition-colors"
-                >
-                  {item.name}
-                </a>
-              ))}
-              <div className="mt-4 px-4">
-                <Button 
-                  variant="primary" 
-                  size="md"
-                  href="https://wa.me/5544999999999"
-                  className="w-full"
-                >
-                  <Phone size={18} />
-                  WhatsApp
-                </Button>
-              </div>
-            </nav>
-          </motion.div>
+          <nav className="md:hidden mt-4 pb-4 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-gray-700 hover:text-terracota transition-colors font-medium"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="https://wa.me/5544999999999"
+              className="flex items-center gap-2 bg-terracota text-white px-4 py-2 rounded-lg hover:bg-terracota-dark transition-colors w-fit"
+            >
+              <Phone size={18} />
+              <span>WhatsApp</span>
+            </a>
+          </nav>
         )}
-      </AnimatePresence>
-    </motion.header>
+      </div>
+    </header>
   );
 }

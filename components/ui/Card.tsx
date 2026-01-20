@@ -1,25 +1,16 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { motion } from 'framer-motion';
 
 interface CardProps {
   children: ReactNode;
   className?: string;
-  hover?: boolean;
 }
 
-export default function Card({ children, className = '', hover = true }: CardProps) {
+export default function Card({ children, className = '' }: CardProps) {
   return (
-    <motion.div
-      className={`bg-white rounded-2xl shadow-md overflow-hidden ${className}`}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      whileHover={hover ? { y: -8 } : undefined}
-    >
+    <div className={`bg-white rounded-xl shadow-md border border-areia-light p-6 transition-all duration-300 hover:-translate-y-2 ${className}`}>
       {children}
-    </motion.div>
+    </div>
   );
 }

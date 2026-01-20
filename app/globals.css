@@ -1,11 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Cores customizadas */
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a1a;
-  
-  /* Cores Finatti */
   --terracota: #B5511F;
   --terracota-dark: #9A4419;
   --terracota-light: #C86B3A;
@@ -17,66 +36,37 @@
   --teal: #30605D;
   --teal-dark: #264A48;
   --teal-light: #3D7773;
+}
+
+/* Utility classes */
+@layer utilities {
+  .bg-terracota { background-color: var(--terracota); }
+  .bg-terracota-dark { background-color: var(--terracota-dark); }
+  .bg-areia { background-color: var(--areia); }
+  .bg-areia-light { background-color: var(--areia-light); }
+  .bg-teal { background-color: var(--teal); }
+  .bg-teal-dark { background-color: var(--teal-dark); }
   
-  --dark: #1a1a1a;
+  .text-terracota { color: var(--terracota); }
+  .text-areia { color: var(--areia); }
+  .text-teal { color: var(--teal); }
+  
+  .border-terracota { border-color: var(--terracota); }
+  .border-areia { border-color: var(--areia); }
+  .border-areia-light { border-color: var(--areia-light); }
+  
+  .hover\:bg-terracota-dark:hover { background-color: var(--terracota-dark); }
+  .hover\:border-terracota:hover { border-color: var(--terracota); }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width: 100%;
-  overflow-x: hidden;
-  margin: 0 auto;
-}
-
-#__next {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-main {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-section {
-  width: 100%;
-  max-width: 100vw;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-/* Pattern de cruzes/estrelas decorativo */
+/* Pattern decorativo */
 .pattern-crosses {
-  background-image: 
-    radial-gradient(circle at 50% 50%, #B5511F 1px, transparent 1px),
-    radial-gradient(circle at 50% 50%, #B5511F 1px, transparent 1px);
+  background-image: radial-gradient(circle at 50% 50%, #B5511F 1px, transparent 1px);
   background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
-  opacity: 0.05;
+  opacity: 0.1;
 }
 
-/* Scrollbar customizada */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -92,43 +82,4 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #9A4419;
-}
-
-/* Utility classes para cores customizadas */
-@layer utilities {
-  /* Text colors */
-  .text-terracota { color: var(--terracota); }
-  .text-terracota-dark { color: var(--terracota-dark); }
-  .text-terracota-light { color: var(--terracota-light); }
-  .text-areia { color: var(--areia); }
-  .text-areia-light { color: var(--areia-light); }
-  .text-areia-dark { color: var(--areia-dark); }
-  .text-teal { color: var(--teal); }
-  .text-teal-dark { color: var(--teal-dark); }
-  .text-teal-light { color: var(--teal-light); }
-  .text-dark { color: var(--dark); }
-  
-  /* Background colors */
-  .bg-terracota { background-color: var(--terracota); }
-  .bg-terracota-dark { background-color: var(--terracota-dark); }
-  .bg-terracota-light { background-color: var(--terracota-light); }
-  .bg-areia { background-color: var(--areia); }
-  .bg-areia-light { background-color: var(--areia-light); }
-  .bg-areia-dark { background-color: var(--areia-dark); }
-  .bg-teal { background-color: var(--teal); }
-  .bg-teal-dark { background-color: var(--teal-dark); }
-  .bg-teal-light { background-color: var(--teal-light); }
-  .bg-dark { background-color: var(--dark); }
-  
-  /* Border colors */
-  .border-terracota { border-color: var(--terracota); }
-  .border-areia { border-color: var(--areia); }
-  .border-areia-light { border-color: var(--areia-light); }
-  .border-teal { border-color: var(--teal); }
-  
-  /* Hover utilities */
-  .hover\:bg-terracota:hover { background-color: var(--terracota); }
-  .hover\:bg-terracota-dark:hover { background-color: var(--terracota-dark); }
-  .hover\:border-terracota:hover { border-color: var(--terracota); }
-  .hover\:text-terracota:hover { color: var(--terracota); }
 }

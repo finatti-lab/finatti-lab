@@ -10,16 +10,18 @@ import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full overflow-x-hidden">
+    <>
       <Header />
-      <Hero />
-      <About />
-      <Differentials />
-      <Services />
-      <Team />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Differentials />
+        <Services />
+        <Team />
+        <Contact />
+      </main>
       <Footer />
       <WhatsAppButton />
-    </main>
+    </>
   );
 }

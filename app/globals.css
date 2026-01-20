@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
-@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   margin: 0;
@@ -21,42 +24,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Georgia, 'Times New Roman', serif;
   font-weight: 600;
   line-height: 1.2;
-}
-
-/* Cores customizadas */
-:root {
-  --terracota: #B5511F;
-  --terracota-dark: #9A4419;
-  --terracota-light: #C86B3A;
-  
-  --areia: #E0CDBA;
-  --areia-light: #F0E5D8;
-  --areia-dark: #D0BDA8;
-  
-  --teal: #30605D;
-  --teal-dark: #264A48;
-  --teal-light: #3D7773;
-}
-
-/* Utility classes */
-@layer utilities {
-  .bg-terracota { background-color: var(--terracota); }
-  .bg-terracota-dark { background-color: var(--terracota-dark); }
-  .bg-areia { background-color: var(--areia); }
-  .bg-areia-light { background-color: var(--areia-light); }
-  .bg-teal { background-color: var(--teal); }
-  .bg-teal-dark { background-color: var(--teal-dark); }
-  
-  .text-terracota { color: var(--terracota); }
-  .text-areia { color: var(--areia); }
-  .text-teal { color: var(--teal); }
-  
-  .border-terracota { border-color: var(--terracota); }
-  .border-areia { border-color: var(--areia); }
-  .border-areia-light { border-color: var(--areia-light); }
-  
-  .hover\:bg-terracota-dark:hover { background-color: var(--terracota-dark); }
-  .hover\:border-terracota:hover { border-color: var(--terracota); }
 }
 
 /* Pattern decorativo */

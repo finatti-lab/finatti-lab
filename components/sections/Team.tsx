@@ -27,21 +27,21 @@ export default function Team() {
         subtitle="Conheça os fundadores que tornaram esse sonho realidade"
       />
 
-      <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
         {team.map((member) => (
-          <div key={member.name} className="bg-white rounded-2xl p-8 shadow-md border-l-4 border-terracota">
-            <h3 className="text-2xl font-bold text-terracota mb-2">
+          <div key={member.name} className="bg-white rounded-2xl p-6 md:p-8 shadow-md border-l-4 border-terracota">
+            <h3 className="text-xl md:text-2xl font-bold text-terracota mb-2">
               {member.name}
             </h3>
-            <p className="text-teal font-medium mb-4">
+            <p className="text-sm md:text-base text-teal font-medium mb-3 md:mb-4">
               {member.role}
             </p>
-            <p className="text-gray-700 mb-6">
+            <p className="text-sm md:text-base text-gray-700 mb-4 md:mb-6 leading-relaxed">
               {member.description}
             </p>
             <a
               href={`mailto:${member.email}`}
-              className="inline-flex items-center gap-2 text-terracota hover:text-terracota-dark transition-colors"
+              className="inline-flex items-center gap-2 text-terracota hover:text-terracota-dark transition-colors text-sm md:text-base"
             >
               <Mail size={18} />
               <span>Email</span>
@@ -50,12 +50,12 @@ export default function Team() {
         ))}
       </div>
 
-      <div className="text-center mt-12 max-w-4xl mx-auto">
-        <p className="text-lg text-gray-700 italic mb-4">
+      <div className="text-center mt-8 md:mt-12 max-w-4xl mx-auto px-4">
+        <p className="text-base md:text-lg text-gray-700 italic mb-4 leading-relaxed">
           "Juntos, construímos um laboratório onde cada exame é tratado com a seriedade e o cuidado que uma vida merece. 
           Nossa missão é servir com excelência, guiados pela fé e pelo compromisso com a verdade."
         </p>
-        <p className="text-terracota font-bold text-xl">Finatti</p>
+        <p className="text-terracota font-bold text-lg md:text-xl">Finatti</p>
       </div>
     </Section>
   );

@@ -55,27 +55,27 @@ export default function Differentials() {
         subtitle="Os 8 pilares que sustentam nossa excelência em medicina diagnóstica"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {differentials.map((item) => (
-          <div key={item.title} className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
-            <div className="w-12 h-12 bg-teal rounded-lg flex items-center justify-center mb-4">
-              <item.icon className="text-white" size={24} />
+          <div key={item.title} className="bg-white rounded-xl p-5 md:p-6 shadow-md hover:shadow-lg transition-all">
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-teal rounded-lg flex items-center justify-center mb-3 md:mb-4">
+              <item.icon className="text-white" size={20} />
             </div>
-            <h3 className="text-lg font-bold text-teal mb-2">
+            <h3 className="text-base md:text-lg font-bold text-teal mb-2">
               {item.title}
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
               {item.description}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="text-center mt-12 max-w-3xl mx-auto">
-        <p className="text-lg text-teal-dark font-semibold mb-2">
+      <div className="text-center mt-8 md:mt-12 max-w-3xl mx-auto px-4">
+        <p className="text-base md:text-lg text-teal-dark font-semibold mb-2">
           Precisão com propósito. Diagnóstico é cuidado.
         </p>
-        <p className="text-gray-700">
+        <p className="text-sm md:text-base text-gray-700">
           Cada um desses valores se reflete em nosso trabalho diário, garantindo que você receba não apenas um resultado, mas um cuidado completo.
         </p>
       </div>

@@ -52,27 +52,27 @@ export default function Services() {
         subtitle="Exames especializados com tecnologia de ponta e olhar humanizado"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {services.map((service) => (
           <Card key={service.title}>
-            <div className="w-16 h-16 bg-terracota rounded-xl flex items-center justify-center mb-4">
-              <service.icon className="text-white" size={32} />
+            <div className="w-14 h-14 md:w-16 md:h-16 bg-terracota rounded-xl flex items-center justify-center mb-4">
+              <service.icon className="text-white" size={28} />
             </div>
-            <h3 className="text-xl font-bold text-terracota mb-3">
+            <h3 className="text-lg md:text-xl font-bold text-terracota mb-3">
               {service.title}
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-sm md:text-base text-gray-600 mb-4 leading-relaxed">
               {service.description}
             </p>
             <ul className="space-y-2 mb-4">
               {service.items.map((item) => (
-                <li key={item} className="text-gray-700 text-sm flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-terracota rounded-full" />
+                <li key={item} className="text-gray-700 text-xs md:text-sm flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-terracota rounded-full flex-shrink-0" />
                   {item}
                 </li>
               ))}
             </ul>
-            <button className="text-terracota font-medium flex items-center gap-2 hover:gap-3 transition-all">
+            <button className="text-terracota font-medium flex items-center gap-2 hover:gap-3 transition-all text-sm md:text-base">
               Saiba mais
               <ArrowRight size={16} />
             </button>
@@ -80,14 +80,14 @@ export default function Services() {
         ))}
       </div>
 
-      <div className="text-center mt-12 bg-teal text-white p-8 rounded-2xl">
-        <h3 className="text-2xl font-bold mb-3">Não encontrou o exame que procura?</h3>
-        <p className="mb-6">
+      <div className="text-center mt-8 md:mt-12 bg-teal text-white p-6 md:p-8 rounded-2xl">
+        <h3 className="text-xl md:text-2xl font-bold mb-3">Não encontrou o exame que procura?</h3>
+        <p className="mb-6 text-sm md:text-base">
           Entre em contato conosco. Estamos prontos para atender suas necessidades com agilidade e excelência.
         </p>
         <a
           href="#contato"
-          className="inline-flex items-center gap-2 bg-white text-teal px-6 py-3 rounded-lg font-medium hover:bg-areia transition-colors"
+          className="inline-flex items-center gap-2 bg-white text-teal px-5 md:px-6 py-2.5 md:py-3 rounded-lg font-medium hover:bg-areia transition-colors text-sm md:text-base"
         >
           Falar com Especialista
           <ArrowRight size={20} />

@@ -13,7 +13,7 @@ export default function About() {
       />
 
       <div className="max-w-4xl mx-auto">
-        <div className="space-y-6 text-gray-700 text-lg leading-relaxed text-center mb-12">
+        <div className="space-y-4 md:space-y-6 text-gray-700 text-base md:text-lg leading-relaxed text-center mb-8 md:mb-12 px-2">
           <p>
             A <strong className="text-terracota">Finatti Medicina Diagnóstica</strong> nasceu do sonho de 
             dois profissionais apaixonados pela medicina: <strong>Dra. Izabella Finatti</strong> e <strong>Guilherme</strong>.
@@ -30,13 +30,13 @@ export default function About() {
             construímos um laboratório onde credibilidade, agilidade e humanidade caminham juntas.
           </p>
 
-          <p className="text-xl font-semibold text-terracota italic">
+          <p className="text-lg md:text-xl font-semibold text-terracota italic pt-2 md:pt-4">
             "Enxergamos o que outros não veem porque olhamos com propósito."
           </p>
         </div>
 
         {/* Values Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {[
             {
               icon: Heart,
@@ -54,14 +54,14 @@ export default function About() {
               description: 'Nossa fé nos guia a servir com integridade, amor e excelência.',
             },
           ].map((value) => (
-            <div key={value.title} className="bg-areia/30 rounded-xl p-6 border border-areia hover:border-terracota transition-all text-center">
-              <div className="w-14 h-14 bg-terracota rounded-xl flex items-center justify-center mx-auto mb-4">
-                <value.icon className="text-white" size={28} />
+            <div key={value.title} className="bg-areia/30 rounded-xl p-5 md:p-6 border border-areia hover:border-terracota transition-all text-center">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-terracota rounded-xl flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <value.icon className="text-white" size={24} />
               </div>
-              <h3 className="text-lg font-bold text-terracota mb-2">
+              <h3 className="text-base md:text-lg font-bold text-terracota mb-2">
                 {value.title}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-sm md:text-base text-gray-600">
                 {value.description}
               </p>
             </div>

@@ -15,37 +15,33 @@ export default function Footer() {
           className="object-contain"
         />
       </div>
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-10 lg:py-12 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {/* Logo e Descrição */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-terracota rounded-lg flex items-center justify-center text-white font-bold text-xl">
+            <div className="flex items-center gap-3 mb-3 md:mb-4">
+              <div className="w-10 h-10 bg-terracota finatti-border-alt flex items-center justify-center text-white font-bold text-lg">
                 F
               </div>
               <div>
-                <h3 className="text-lg md:text-xl font-bold">Finatti</h3>
-                <p className="text-xs md:text-sm text-gray-400">Medicina Diagnóstica</p>
+                <h3 className="text-base md:text-lg font-bold">Finatti</h3>
+                <p className="text-xs text-gray-400">Medicina Diagnóstica</p>
               </div>
             </div>
-            <p className="text-sm md:text-base text-gray-400 mb-4">
+            <p className="text-xs md:text-sm text-gray-400 mb-3 md:mb-4 leading-relaxed">
               Seus olhos em cada exame. Diagnóstico preciso com propósito e humanidade.
             </p>
-            <div className="flex items-center gap-2 text-xs md:text-sm text-gray-400">
-              <Heart size={16} className="text-terracota flex-shrink-0" />
-              <span>Feito com valores cristãos</span>
-            </div>
           </div>
 
           {/* Navegação */}
           <div>
-            <h4 className="font-bold mb-3 md:mb-4 text-sm md:text-base">Navegação</h4>
-            <ul className="space-y-2">
+            <h4 className="font-bold mb-3 text-sm md:text-base">Navegação</h4>
+            <ul className="space-y-1.5 md:space-y-2">
               {['Início', 'Sobre Nós', 'Diferenciais', 'Serviços'].map((item, index) => (
                 <li key={item}>
                   <a
                     href={`#${['hero', 'sobre', 'diferenciais', 'servicos'][index]}`}
-                    className="text-sm md:text-base text-gray-400 hover:text-terracota transition-colors"
+                    className="text-xs md:text-sm text-gray-400 hover:text-terracota transition-colors"
                   >
                     {item}
                   </a>
@@ -56,8 +52,8 @@ export default function Footer() {
 
           {/* Links Úteis */}
           <div>
-            <h4 className="font-bold mb-3 md:mb-4 text-sm md:text-base">Links Úteis</h4>
-            <ul className="space-y-2">
+            <h4 className="font-bold mb-3 text-sm md:text-base">Links Úteis</h4>
+            <ul className="space-y-1.5 md:space-y-2">
               <li>
                 <a href="#equipe" className="text-sm md:text-base text-gray-400 hover:text-terracota transition-colors">
                   Equipe
@@ -83,8 +79,8 @@ export default function Footer() {
 
           {/* Contato */}
           <div>
-            <h4 className="font-bold mb-3 md:mb-4 text-sm md:text-base">Contato</h4>
-            <ul className="space-y-3">
+            <h4 className="font-bold mb-3 text-sm md:text-base">Contato</h4>
+            <ul className="space-y-2.5 md:space-y-3">
               <li className="flex items-start gap-2 text-gray-400 text-sm md:text-base">
                 <MapPin size={16} className="text-terracota flex-shrink-0 mt-0.5" />
                 <a 

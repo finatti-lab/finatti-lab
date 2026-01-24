@@ -29,19 +29,19 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white shadow-lg py-3 md:py-4' 
-          : 'bg-white/95 backdrop-blur-sm shadow-md py-4 md:py-6'
+          ? 'bg-white shadow-lg py-2 md:py-3 lg:py-4' 
+          : 'bg-white/95 backdrop-blur-sm shadow-md py-3 md:py-4 lg:py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#hero" className="relative h-12 md:h-14 w-48 md:w-64">
+          {/* Logo - Responsivo */}
+          <a href="#hero" className="relative h-10 md:h-12 lg:h-14 w-40 md:w-48 lg:w-64 flex-shrink-0">
             <Image
               src="/images/01-laranja.png"
               alt="Finatti Medicina Diagnóstica"
               fill
-              className="object-contain"
+              className="object-contain object-left"
               priority
             />
           </a>
@@ -60,7 +60,7 @@ export default function Header() {
           </nav>
 
           {/* Instagram, Área do Paciente e WhatsApp Desktop */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3">
             <a
               href="https://www.instagram.com/finattilab/"
               target="_blank"
@@ -68,24 +68,25 @@ export default function Header() {
               className="p-2 transition-colors text-terracota hover:text-terracota-dark"
               aria-label="Instagram"
             >
-              <Instagram size={22} />
+              <Instagram size={20} />
             </a>
             <a
               href="https://finattipatologia.pathoweb.com.br/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 xl:px-5 py-2 xl:py-2.5 finatti-border border-2 border-teal text-teal hover:bg-teal hover:text-white transition-all hover:scale-105 text-sm xl:text-base font-medium"
+              className="flex items-center gap-1.5 xl:gap-2 px-3 xl:px-4 py-2 finatti-border border-2 border-teal text-teal hover:bg-teal hover:text-white transition-all hover:scale-105 text-sm font-medium"
             >
-              <FileText size={18} />
-              <span>Resultados</span>
+              <FileText size={16} />
+              <span className="hidden xl:inline">Resultados</span>
+              <span className="xl:hidden">Portal</span>
             </a>
             <a
               href="https://wa.me/5544991272027?text=Finatti+Laboratório+de+Patologia+e+Citopatologia"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#25D366] text-white px-4 xl:px-5 py-2 xl:py-2.5 finatti-border hover:bg-[#1ea952] transition-all hover:scale-105 text-sm xl:text-base font-medium shadow-lg"
+              className="flex items-center gap-1.5 xl:gap-2 bg-[#25D366] text-white px-3 xl:px-4 py-2 finatti-border hover:bg-[#1ea952] transition-all hover:scale-105 text-sm font-medium shadow-lg"
             >
-              <Phone size={18} />
+              <Phone size={16} />
               <span>WhatsApp</span>
             </a>
           </div>
@@ -102,35 +103,37 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <nav className="lg:hidden mt-4 pb-4 flex flex-col gap-3 border-t border-gray-200 pt-4">
+          <nav className="lg:hidden mt-3 pb-3 flex flex-col gap-2.5 border-t border-gray-200 pt-3">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="transition-colors font-medium text-stone-800 hover:text-terracota"
+                className="transition-colors font-medium text-stone-800 hover:text-terracota py-1 text-sm"
               >
                 {link.label}
               </a>
             ))}
-            <a
-              href="https://finattipatologia.pathoweb.com.br/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2.5 finatti-border border-2 border-teal text-teal hover:bg-teal hover:text-white transition-colors w-fit mt-2 font-medium"
-            >
-              <FileText size={18} />
-              <span>Resultados</span>
-            </a>
-            <a
-              href="https://wa.me/5544991272027?text=Finatti+Laboratório+de+Patologia+e+Citopatologia"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#25D366] text-white px-4 py-2.5 finatti-border hover:bg-[#1ea952] transition-colors w-fit font-medium"
-            >
-              <Phone size={18} />
-              <span>WhatsApp</span>
-            </a>
+            <div className="flex flex-col gap-2 mt-2 pt-3 border-t border-gray-200">
+              <a
+                href="https://finattipatologia.pathoweb.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-4 py-2.5 finatti-border border-2 border-teal text-teal hover:bg-teal hover:text-white transition-colors font-medium text-sm"
+              >
+                <FileText size={16} />
+                <span>Área do Paciente</span>
+              </a>
+              <a
+                href="https://wa.me/5544991272027?text=Finatti+Laboratório+de+Patologia+e+Citopatologia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-[#25D366] text-white px-4 py-2.5 finatti-border hover:bg-[#1ea952] transition-colors font-medium text-sm"
+              >
+                <Phone size={16} />
+                <span>WhatsApp</span>
+              </a>
+            </div>
           </nav>
         )}
       </div>

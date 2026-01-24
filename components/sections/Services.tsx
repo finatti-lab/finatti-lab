@@ -50,36 +50,47 @@ export default function Services() {
   ];
 
   return (
-    <section id="servicos" className="bg-areia/30 py-12 md:py-16 lg:py-24 relative overflow-hidden">
-      {/* Isotipo decorativo */}
-      <div className="absolute right-0 top-20 w-64 h-64 lg:w-96 lg:h-96 opacity-10 pointer-events-none hidden lg:block">
-        <Image 
-          src="/images/06.png" 
-          alt="" 
-          fill 
-          className="object-contain"
-        />
+    <section id="servicos" className="bg-areia/30 py-12 lg:py-24 relative overflow-hidden">
+      <div className="absolute right-0 top-20 w-96 h-96 opacity-10 pointer-events-none hidden lg:block">
+        <Image src="/images/06.png" alt="" fill className="object-contain" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center mb-8 md:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-terracota mb-3 md:mb-4">
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
+        <div className="text-center mb-8 lg:mb-16">
+          <h2 className="text-2xl lg:text-5xl font-bold text-terracota mb-4">
             Nossos Serviços
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-stone-600 max-w-2xl mx-auto px-4">
+          <p className="text-base lg:text-xl text-stone-600 max-w-2xl mx-auto">
             Exames especializados com tecnologia de ponta e olhar humanizado
           </p>
         </div>
 
-        {/* Grid de cards com imagens e hover elaborado */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+        {/* MOBILE: Lista vertical compacta */}
+        <div className="space-y-4 lg:hidden">
+          {services.map((service) => (
+            <div key={service.title} className="bg-white rounded-tl-xl rounded-br-xl overflow-hidden flex shadow-md">
+              <div className="w-24 h-24 relative flex-shrink-0">
+                <Image src={service.image} alt={service.title} fill className="object-cover" />
+                <div className="absolute inset-0 bg-terracota/60 flex items-center justify-center">
+                  <service.icon className="text-white" size={24} />
+                </div>
+              </div>
+              <div className="p-4 flex-1">
+                <h3 className="font-bold text-terracota mb-1 text-sm">{service.title}</h3>
+                <p className="text-xs text-stone-600 line-clamp-2">{service.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* DESKTOP: Grid com cards elaborados */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <div 
               key={service.title} 
-              className="group relative overflow-hidden rounded-tl-[2rem] md:rounded-tl-[3rem] rounded-br-[2rem] md:rounded-br-[3rem] rounded-tr-none rounded-bl-none cursor-pointer bg-white shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="group relative overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] cursor-pointer bg-white shadow-lg hover:shadow-2xl transition-all duration-500"
             >
-              {/* Imagem com zoom no hover */}
-              <div className="relative h-48 md:h-56 overflow-hidden">
+              <div className="relative h-56 overflow-hidden">
                 <Image 
                   src={service.image}
                   alt={service.title}
@@ -87,26 +98,22 @@ export default function Services() {
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-terracota/90 via-terracota/50 to-transparent" />
-                
-                {/* Ícone no canto */}
-                <div className="absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm rounded-tl-xl rounded-br-xl flex items-center justify-center">
-                  <service.icon className="text-white" size={20} />
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-tl-xl rounded-br-xl flex items-center justify-center">
+                  <service.icon className="text-white" size={24} />
                 </div>
               </div>
               
-              {/* Conteúdo */}
-              <div className="p-5 md:p-6">
-                <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-terracota mb-2 md:mb-3 group-hover:text-teal transition-colors">
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-terracota mb-3 group-hover:text-teal transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-stone-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">
+                <p className="text-stone-600 mb-4 leading-relaxed text-base">
                   {service.description}
                 </p>
                 
-                {/* Lista de itens */}
-                <ul className="space-y-1.5 md:space-y-2 opacity-70 group-hover:opacity-100 transition-opacity">
+                <ul className="space-y-2 opacity-70 group-hover:opacity-100 transition-opacity">
                   {service.items.map((item) => (
-                    <li key={item} className="text-xs md:text-sm text-stone-600 flex items-center gap-2">
+                    <li key={item} className="text-sm text-stone-600 flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-terracota rounded-full flex-shrink-0" />
                       {item}
                     </li>

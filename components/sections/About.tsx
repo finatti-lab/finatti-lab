@@ -5,12 +5,64 @@ import Image from 'next/image';
 
 export default function About() {
   return (
-    <section id="sobre" className="bg-white py-12 md:py-16 lg:py-24">
-      <div className="max-w-7xl mx-auto">
-        {/* Layout Editorial - Imagem + Texto */}
+    <section id="sobre" className="bg-white py-12 lg:py-24">
+      {/* MOBILE: Layout vertical simples */}
+      <div className="lg:hidden px-4">
+        <h2 className="text-2xl font-bold text-terracota text-center mb-6">Nossa História</h2>
+        
+        {/* Imagem */}
+        <div className="relative h-[250px] rounded-tl-2xl rounded-br-2xl overflow-hidden mb-6">
+          <Image 
+            src="/images/dra-izabella.jpeg" 
+            alt="Dra. Izabella Novo Finatti"
+            fill 
+            className="object-cover object-[center_20%]"
+          />
+        </div>
+        
+        {/* Texto resumido */}
+        <p className="text-sm text-stone-700 mb-6 leading-relaxed">
+          A Finatti Medicina Diagnóstica nasceu do sonho de dois profissionais apaixonados pela medicina: Dra. Izabella Novo Finatti e Guilherme Cerci. Unidos pela visão de que diagnóstico é cuidado, eles fundaram um laboratório onde cada exame é tratado com a seriedade que uma vida merece.
+        </p>
+        
+        {/* Citação compacta */}
+        <blockquote className="border-l-4 border-terracota pl-4 mb-8">
+          <p className="text-base italic text-terracota font-medium leading-relaxed">
+            "Enxergamos o que outros não veem porque olhamos com propósito."
+          </p>
+        </blockquote>
+        
+        {/* Cards empilhados */}
+        <div className="space-y-4">
+          <div className="bg-areia border-2 border-areia-light p-4 rounded-tl-xl rounded-br-xl">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 bg-terracota finatti-border-alt flex items-center justify-center flex-shrink-0">
+                <Heart className="text-white" size={20} />
+              </div>
+              <div>
+                <h3 className="font-bold text-terracota mb-1">Humanidade</h3>
+                <p className="text-sm text-stone-600">Cada exame representa uma vida. Tratamos com o cuidado que você merece.</p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-areia border-2 border-areia-light p-4 rounded-tl-xl rounded-br-xl">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 bg-terracota finatti-border-alt flex items-center justify-center flex-shrink-0">
+                <Target className="text-white" size={20} />
+              </div>
+              <div>
+                <h3 className="font-bold text-terracota mb-1">Precisão com Propósito</h3>
+                <p className="text-sm text-stone-600">Tecnologia aliada à expertise médica para diagnósticos assertivos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* DESKTOP: Layout editorial original */}
+      <div className="hidden lg:block max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-0">
-          {/* Imagem GRANDE à esquerda */}
-          <div className="relative h-[350px] sm:h-[400px] md:h-[500px] lg:h-[700px]">
+          <div className="relative h-[700px]">
             <Image 
               src="/images/dra-izabella.jpeg" 
               alt="Dra. Izabella Novo Finatti"
@@ -19,17 +71,16 @@ export default function About() {
             />
           </div>
           
-          {/* Texto editorial à direita */}
-          <div className="bg-areia p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-center relative">
+          <div className="bg-areia p-16 flex flex-col justify-center relative">
             {/* Linha vertical decorativa */}
             <div className="absolute left-0 top-0 bottom-0 w-1 bg-terracota hidden lg:block" />
             
-            <span className="text-terracota font-semibold text-xs md:text-sm uppercase tracking-wider mb-3 md:mb-4">Nossa História</span>
-            <h2 className="font-mefta text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-stone-900 mb-4 md:mb-6 leading-tight">
+            <span className="text-terracota font-semibold text-sm uppercase tracking-wider mb-4">Nossa História</span>
+            <h2 className="font-mefta text-5xl font-bold text-stone-900 mb-6 leading-tight">
               Medicina para servir, não para mercantilizar
             </h2>
             
-            <div className="space-y-3 md:space-y-4 text-stone-700 text-sm md:text-base lg:text-lg leading-relaxed mb-6 md:mb-8">
+            <div className="space-y-4 text-stone-700 text-lg leading-relaxed mb-8">
               <p>
                 A <strong className="text-terracota">Finatti Medicina Diagnóstica</strong> nasceu do sonho de 
                 dois profissionais apaixonados pela medicina: <strong>Dra. Izabella Novo Finatti</strong> e <strong>Guilherme Cerci</strong>.
@@ -47,18 +98,16 @@ export default function About() {
               </p>
             </div>
             
-            {/* Citação destacada com aspas grandes */}
-            <blockquote className="border-l-4 border-terracota pl-4 md:pl-6 relative">
-              <span className="absolute -left-2 -top-3 md:-top-4 text-5xl md:text-6xl text-terracota/20 font-serif">"</span>
-              <p className="text-lg md:text-xl lg:text-2xl italic text-terracota font-medium leading-relaxed">
+            <blockquote className="border-l-4 border-terracota pl-6 relative">
+              <span className="absolute -left-2 -top-4 text-6xl text-terracota/20 font-serif">"</span>
+              <p className="text-2xl italic text-terracota font-medium leading-relaxed">
                 Enxergamos o que outros não veem porque olhamos com propósito.
               </p>
             </blockquote>
           </div>
         </div>
 
-        {/* Values Cards - Embaixo em layout horizontal */}
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto mt-8 md:mt-12 lg:mt-16 px-4 md:px-8">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-16 px-8">
           {[
             {
               icon: Heart,
@@ -71,16 +120,16 @@ export default function About() {
               description: 'Tecnologia aliada à expertise médica para diagnósticos assertivos.',
             },
           ].map((value) => (
-            <div key={value.title} className="bg-white border-2 border-areia finatti-border p-5 md:p-6 lg:p-8 hover:border-terracota hover:shadow-lg transition-all group">
-              <div className="flex items-start gap-3 md:gap-4">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-terracota finatti-border-alt flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <value.icon className="text-white" size={24} />
+            <div key={value.title} className="bg-white border-2 border-areia finatti-border p-8 hover:border-terracota hover:shadow-lg transition-all group">
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 bg-terracota finatti-border-alt flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <value.icon className="text-white" size={28} />
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold text-terracota mb-2">
+                  <h3 className="text-xl font-bold text-terracota mb-2">
                     {value.title}
                   </h3>
-                  <p className="text-sm md:text-base text-stone-600 leading-relaxed">
+                  <p className="text-base text-stone-600 leading-relaxed">
                     {value.description}
                   </p>
                 </div>

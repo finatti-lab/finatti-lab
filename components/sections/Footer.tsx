@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white relative overflow-hidden">
+    <footer className="bg-[#1e3a3a] text-white relative overflow-hidden">
       {/* Isotipo decorativo branco */}
       <div className="absolute bottom-0 right-0 w-64 h-64 lg:w-96 lg:h-96 opacity-5 pointer-events-none hidden md:block">
         <Image 

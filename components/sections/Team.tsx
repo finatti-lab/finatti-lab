@@ -7,14 +7,16 @@ import SectionTitle from '../ui/SectionTitle';
 export default function Team() {
   const team = [
     {
-      name: 'Dra. Izabella Finatti',
+      name: 'Dra. Izabella Novo Finatti',
       role: 'Médica Patologista | Cofundadora',
+      crm: 'CRM-PR 44595 / RQE 34647',
       description: 'Especialista em patologia com anos de experiência em diagnóstico. Apaixonada por medicina de precisão e pelo cuidado humanizado.',
       email: 'izabella@finatti.com.br',
     },
     {
-      name: 'Guilherme Finatti',
+      name: 'Guilherme Cerci',
       role: 'Gestor | Cofundador',
+      crm: '',
       description: 'Responsável pela gestão estratégica e operacional. Comprometido em levar medicina diagnóstica de excelência a todos.',
       email: 'guilherme@finatti.com.br',
     },
@@ -33,9 +35,15 @@ export default function Team() {
             <h3 className="text-xl md:text-2xl font-bold text-terracota mb-2">
               {member.name}
             </h3>
-            <p className="text-sm md:text-base text-teal font-medium mb-3 md:mb-4">
+            <p className="text-sm md:text-base text-teal font-medium mb-1">
               {member.role}
             </p>
+            {member.crm && (
+              <p className="text-xs md:text-sm text-gray-500 mb-3 md:mb-4">
+                {member.crm}
+              </p>
+            )}
+            {!member.crm && <div className="mb-3 md:mb-4" />}
             <p className="text-sm md:text-base text-gray-700 mb-4 md:mb-6 leading-relaxed">
               {member.description}
             </p>

@@ -91,7 +91,7 @@ export default function RootLayout({
               "email": "contato@finatti.com.br",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "R. São Paulo, 2291 - Zona 1",
+                "streetAddress": "Av. Espírito Santo, 130 - Zona 1",
                 "addressLocality": "Cianorte",
                 "addressRegion": "PR",
                 "postalCode": "87200-000",
@@ -112,7 +112,7 @@ export default function RootLayout({
               "medicalSpecialty": ["Pathology", "Cytopathology"],
               "founder": {
                 "@type": "Person",
-                "name": "Dra. Izabella Finatti Cerci",
+                "name": "Dra. Izabella Novo Finatti",
                 "jobTitle": "Médica Patologista"
               }
             })

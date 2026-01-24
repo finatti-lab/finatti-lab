@@ -27,7 +27,8 @@ export default {
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-        display: ['Georgia', 'Times New Roman', 'serif'],
+        display: ['Mefta', 'Georgia', 'Times New Roman', 'serif'],
+        mefta: ['Mefta', 'Georgia', 'serif'],
       },
     },
   },

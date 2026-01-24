@@ -16,7 +16,7 @@ export default function About() {
         <div className="space-y-4 md:space-y-6 text-gray-700 text-base md:text-lg leading-relaxed text-center mb-8 md:mb-12 px-2">
           <p>
             A <strong className="text-terracota">Finatti Medicina Diagnóstica</strong> nasceu do sonho de 
-            dois profissionais apaixonados pela medicina: <strong>Dra. Izabella Finatti</strong> e <strong>Guilherme</strong>.
+            dois profissionais apaixonados pela medicina: <strong>Dra. Izabella Novo Finatti</strong> e <strong>Guilherme Cerci</strong>.
           </p>
 
           <p>
@@ -26,7 +26,7 @@ export default function About() {
           </p>
 
           <p>
-            Guiados por <strong>valores cristãos</strong> e pelo compromisso com a excelência, 
+            Guiados pelo compromisso com a excelência e pela ética profissional, 
             construímos um laboratório onde credibilidade, agilidade e humanidade caminham juntas.
           </p>
 
@@ -36,7 +36,7 @@ export default function About() {
         </div>
 
         {/* Values Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto">
           {[
             {
               icon: Heart,
@@ -47,11 +47,6 @@ export default function About() {
               icon: Target,
               title: 'Precisão com Propósito',
               description: 'Tecnologia aliada à expertise médica para diagnósticos assertivos.',
-            },
-            {
-              icon: Sparkles,
-              title: 'Valores Cristãos',
-              description: 'Nossa fé nos guia a servir com integridade, amor e excelência.',
             },
           ].map((value) => (
             <div key={value.title} className="bg-areia/30 rounded-xl p-5 md:p-6 border border-areia hover:border-terracota transition-all text-center">

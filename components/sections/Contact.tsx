@@ -74,7 +74,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-terracota text-sm md:text-base"
               >
-                R. São Paulo, 2291 - Zona 1<br />Cianorte - PR, 87200-000
+                Av. Espírito Santo, 130 - Zona 1<br />Cianorte - PR, 87200-000
               </a>
             </div>
 

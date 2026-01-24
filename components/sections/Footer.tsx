@@ -83,7 +83,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-terracota transition-colors"
                 >
-                  R. São Paulo, 2291 - Zona 1<br />Cianorte - PR, 87200-000
+                  Av. Espírito Santo, 130 - Zona 1<br />Cianorte - PR, 87200-000
                 </a>
               </li>
               <li className="flex items-center gap-2">

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Instagram } from 'lucide-react';
+import { Menu, X, Phone, Instagram, FileText } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Header() {
@@ -76,7 +76,7 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Instagram e WhatsApp Desktop */}
+          {/* Instagram, Área do Paciente e WhatsApp Desktop */}
           <div className="hidden lg:flex items-center gap-3">
             <a
               href="https://www.instagram.com/finattilab/"
@@ -88,6 +88,19 @@ export default function Header() {
               aria-label="Instagram"
             >
               <Instagram size={22} />
+            </a>
+            <a
+              href="https://finattipatologia.pathoweb.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center gap-2 px-4 xl:px-5 py-2 xl:py-2.5 finatti-border border-2 transition-all hover:scale-105 text-sm xl:text-base font-medium ${
+                isScrolled 
+                  ? 'border-terracota text-terracota hover:bg-terracota hover:text-white' 
+                  : 'border-white text-white hover:bg-white hover:text-terracota'
+              }`}
+            >
+              <FileText size={18} />
+              <span>Resultados</span>
             </a>
             <a
               href="https://wa.me/5544991272027?text=Finatti+Laboratório+de+Patologia+e+Citopatologia"
@@ -130,10 +143,23 @@ export default function Header() {
               </a>
             ))}
             <a
+              href="https://finattipatologia.pathoweb.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center gap-2 px-4 py-2.5 finatti-border border-2 transition-colors w-fit mt-2 font-medium ${
+                isScrolled 
+                  ? 'border-terracota text-terracota hover:bg-terracota hover:text-white' 
+                  : 'border-white text-white hover:bg-white hover:text-terracota'
+              }`}
+            >
+              <FileText size={18} />
+              <span>Resultados</span>
+            </a>
+            <a
               href="https://wa.me/5544991272027?text=Finatti+Laboratório+de+Patologia+e+Citopatologia"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-terracota text-white px-4 py-2.5 finatti-border hover:bg-terracota-dark transition-colors w-fit mt-2 font-medium"
+              className="flex items-center gap-2 bg-terracota text-white px-4 py-2.5 finatti-border hover:bg-terracota-dark transition-colors w-fit font-medium"
             >
               <Phone size={18} />
               <span>WhatsApp</span>

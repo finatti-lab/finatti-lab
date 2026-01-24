@@ -32,10 +32,15 @@ export default function Hero() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-12 md:mb-16 px-4">
-          <Button href="#contato" variant="primary" className="bg-white text-terracota hover:bg-areia w-full sm:w-auto">
+          <a
+            href="https://wa.me/5544991272027?text=Finatti+Laboratório+de+Patologia+e+Citopatologia"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 finatti-border font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl bg-white text-terracota hover:bg-areia w-full sm:w-auto justify-center"
+          >
             Agendar Exame
             <ArrowRight size={20} />
-          </Button>
+          </a>
           <Button href="#sobre" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-terracota w-full sm:w-auto">
             Nossa História
           </Button>

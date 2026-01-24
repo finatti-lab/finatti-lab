@@ -15,7 +15,7 @@ export default function Button({
   className = '',
   ...props
 }: ButtonProps) {
-  const baseClasses = 'inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300';
+  const baseClasses = 'inline-flex items-center gap-2 px-6 py-3 finatti-border font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl';
   
   const variants = {
     primary: 'bg-terracota text-white hover:bg-terracota-dark',

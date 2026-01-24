@@ -59,7 +59,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/5544999999999" className="text-sm md:text-base text-gray-400 hover:text-terracota transition-colors">
+                <a 
+                  href="https://wa.me/5544991272027?text=Finatti+Laboratório+de+Patologia+e+Citopatologia" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm md:text-base text-gray-400 hover:text-terracota transition-colors"
+                >
                   WhatsApp
                 </a>
               </li>
@@ -70,14 +75,21 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-3 md:mb-4 text-sm md:text-base">Contato</h4>
             <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-gray-400 text-sm md:text-base">
-                <MapPin size={16} className="text-terracota flex-shrink-0" />
-                <span>Cianorte - PR</span>
+              <li className="flex items-start gap-2 text-gray-400 text-sm md:text-base">
+                <MapPin size={16} className="text-terracota flex-shrink-0 mt-0.5" />
+                <a 
+                  href="https://maps.app.goo.gl/CCvbrU1Ys1J7odEFh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-terracota transition-colors"
+                >
+                  R. São Paulo, 2291 - Zona 1<br />Cianorte - PR, 87200-000
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="text-terracota flex-shrink-0" />
-                <a href="tel:+5544999999999" className="text-sm md:text-base text-gray-400 hover:text-terracota transition-colors">
-                  (44) 9999-9999
+                <a href="tel:+5544991272027" className="text-sm md:text-base text-gray-400 hover:text-terracota transition-colors">
+                  (44) 99127-2027
                 </a>
               </li>
               <li className="flex items-start gap-2">
@@ -90,7 +102,13 @@ export default function Footer() {
 
             {/* Redes Sociais */}
             <div className="flex items-center gap-4 mt-4 md:mt-6">
-              <a href="#" className="text-gray-400 hover:text-terracota transition-colors" aria-label="Instagram">
+              <a 
+                href="https://www.instagram.com/finattilab/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-terracota transition-colors" 
+                aria-label="Instagram"
+              >
                 <Instagram size={20} />
               </a>
               <a href="#" className="text-gray-400 hover:text-terracota transition-colors" aria-label="Facebook">

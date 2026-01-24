@@ -80,14 +80,16 @@ export default function Services() {
         ))}
       </div>
 
-      <div className="text-center mt-8 md:mt-12 bg-teal text-white p-6 md:p-8 rounded-2xl">
+      <div className="text-center mt-8 md:mt-12 bg-teal text-white p-6 md:p-8 finatti-border">
         <h3 className="text-xl md:text-2xl font-bold mb-3">Não encontrou o exame que procura?</h3>
         <p className="mb-6 text-sm md:text-base">
           Entre em contato conosco. Estamos prontos para atender suas necessidades com agilidade e excelência.
         </p>
         <a
-          href="#contato"
-          className="inline-flex items-center gap-2 bg-white text-teal px-5 md:px-6 py-2.5 md:py-3 rounded-lg font-medium hover:bg-areia transition-colors text-sm md:text-base"
+          href="https://wa.me/5544991272027?text=Finatti+Laboratório+de+Patologia+e+Citopatologia"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-white text-teal px-5 md:px-6 py-2.5 md:py-3 finatti-border font-medium hover:bg-areia hover:scale-105 transition-all text-sm md:text-base shadow-lg"
         >
           Falar com Especialista
           <ArrowRight size={20} />

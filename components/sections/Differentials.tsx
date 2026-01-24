@@ -57,8 +57,8 @@ export default function Differentials() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {differentials.map((item) => (
-          <div key={item.title} className="bg-white rounded-xl p-5 md:p-6 shadow-md hover:shadow-lg transition-all">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-teal rounded-lg flex items-center justify-center mb-3 md:mb-4">
+          <div key={item.title} className="bg-white finatti-border p-5 md:p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1">
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-teal finatti-border-alt flex items-center justify-center mb-3 md:mb-4">
               <item.icon className="text-white" size={20} />
             </div>
             <h3 className="text-base md:text-lg font-bold text-teal mb-2">

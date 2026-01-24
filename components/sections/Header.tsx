@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Instagram } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Header() {
@@ -76,14 +76,29 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* WhatsApp CTA Desktop */}
-          <a
-            href="https://wa.me/5544999999999"
-            className="hidden lg:flex items-center gap-2 bg-terracota text-white px-4 xl:px-5 py-2 xl:py-2.5 rounded-lg hover:bg-terracota-dark transition-colors text-sm xl:text-base font-medium"
-          >
-            <Phone size={18} />
-            <span>WhatsApp</span>
-          </a>
+          {/* Instagram e WhatsApp Desktop */}
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href="https://www.instagram.com/finattilab/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`p-2 transition-colors ${
+                isScrolled ? 'text-terracota hover:text-terracota-dark' : 'text-white hover:text-areia'
+              }`}
+              aria-label="Instagram"
+            >
+              <Instagram size={22} />
+            </a>
+            <a
+              href="https://wa.me/5544991272027?text=Finatti+Laboratório+de+Patologia+e+Citopatologia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-terracota text-white px-4 xl:px-5 py-2 xl:py-2.5 finatti-border hover:bg-terracota-dark transition-all hover:scale-105 text-sm xl:text-base font-medium shadow-lg"
+            >
+              <Phone size={18} />
+              <span>WhatsApp</span>
+            </a>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -115,8 +130,10 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="https://wa.me/5544999999999"
-              className="flex items-center gap-2 bg-terracota text-white px-4 py-2.5 rounded-lg hover:bg-terracota-dark transition-colors w-fit mt-2 font-medium"
+              href="https://wa.me/5544991272027?text=Finatti+Laboratório+de+Patologia+e+Citopatologia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-terracota text-white px-4 py-2.5 finatti-border hover:bg-terracota-dark transition-colors w-fit mt-2 font-medium"
             >
               <Phone size={18} />
               <span>WhatsApp</span>

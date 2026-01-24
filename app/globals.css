@@ -4,6 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Bordas estilo Finatti */
+@layer utilities {
+  .finatti-border {
+    border-radius: 1rem 0 1rem 0;
+  }
+  
+  .finatti-border-alt {
+    border-radius: 0 1rem 0 1rem;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;

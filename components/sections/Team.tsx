@@ -29,7 +29,7 @@ export default function Team() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
         {team.map((member) => (
-          <div key={member.name} className="bg-white rounded-2xl p-6 md:p-8 shadow-md border-l-4 border-terracota">
+          <div key={member.name} className="bg-white finatti-border p-6 md:p-8 shadow-md border-l-4 border-terracota hover:shadow-xl transition-all">
             <h3 className="text-xl md:text-2xl font-bold text-terracota mb-2">
               {member.name}
             </h3>

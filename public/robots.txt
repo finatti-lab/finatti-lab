@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://finatti-lab.vercel.app/sitemap.xml

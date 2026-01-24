@@ -15,7 +15,7 @@ export default function About() {
               src="/images/dra-izabella.jpeg" 
               alt="Dra. Izabella Novo Finatti"
               fill 
-              className="object-cover lg:rounded-tr-[5rem] lg:rounded-bl-[5rem]"
+              className="object-cover object-[center_20%] lg:rounded-tr-[5rem] lg:rounded-bl-[5rem]"
             />
           </div>
           

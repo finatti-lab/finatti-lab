@@ -13,7 +13,7 @@ export default function Team() {
       crm: 'CRM-PR 44595 / RQE 34647',
       description: 'Especialista em patologia com anos de experiência em diagnóstico. Apaixonada por medicina de precisão e pelo cuidado humanizado.',
       email: 'izabella@finatti.com.br',
-      image: '/images/dra-izabella.jpeg',
+      image: '/images/dra-izabella-2.jpeg',
     },
     {
       name: 'Guilherme Cerci',
@@ -35,34 +35,34 @@ export default function Team() {
       {/* Layout assimétrico */}
       <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
         {/* Card Dra. Izabella - GRANDE (2 colunas) */}
-        <div className="lg:col-span-2 grid md:grid-cols-2 gap-0 bg-areia rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-none rounded-bl-none overflow-hidden shadow-xl hover:shadow-2xl transition-all">
+        <div className="lg:col-span-2 grid md:grid-cols-2 gap-0 bg-white rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-none rounded-bl-none overflow-hidden shadow-xl hover:shadow-2xl transition-all border-2 border-areia">
           <div className="relative h-[400px] md:h-auto">
             <Image 
-              src="/images/dra-izabella.jpeg" 
+              src="/images/dra-izabella-2.jpeg" 
               alt="Dra. Izabella Novo Finatti"
               fill 
-              className="object-cover"
+              className="object-cover object-center"
             />
           </div>
-          <div className="p-6 md:p-8 flex flex-col justify-center">
-            <h3 className="text-2xl md:text-3xl font-bold text-terracota mb-2">
+          <div className="p-6 md:p-8 lg:p-10 flex flex-col justify-center bg-areia/50">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-terracota mb-2">
               Dra. Izabella Novo Finatti
             </h3>
-            <p className="text-teal font-semibold mb-1">
+            <p className="text-teal font-semibold text-base md:text-lg mb-1">
               Médica Patologista | Cofundadora
             </p>
-            <p className="text-sm text-stone-500 mb-4">
+            <p className="text-sm text-stone-500 mb-5">
               CRM-PR 44595 / RQE 34647
             </p>
-            <p className="text-stone-600 leading-relaxed mb-6">
+            <p className="text-stone-700 leading-relaxed mb-6 text-base md:text-lg">
               Especialista em patologia com anos de experiência em diagnóstico. Apaixonada por medicina de precisão e pelo cuidado humanizado.
             </p>
             <a
               href="mailto:izabella@finatti.com.br"
-              className="inline-flex items-center gap-2 text-terracota hover:text-terracota-dark transition-colors font-medium"
+              className="inline-flex items-center gap-2 text-terracota hover:text-terracota-dark transition-colors font-semibold"
             >
-              <Mail size={18} />
-              <span>Email</span>
+              <Mail size={20} />
+              <span>Enviar Email</span>
             </a>
           </div>
         </div>

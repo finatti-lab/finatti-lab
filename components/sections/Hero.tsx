@@ -89,14 +89,15 @@ export default function Hero() {
                 />
               </div>
               
-              {/* Imagem da Dra. - MAIOR */}
-              <div className="relative overflow-hidden rounded-tl-[4rem] rounded-br-[4rem] rounded-tr-none rounded-bl-none shadow-2xl border-8 border-white h-[450px] md:h-[600px] lg:h-[700px]">
+              {/* Imagem da Dra. - Tamanho reduzido para melhor qualidade */}
+              <div className="relative overflow-hidden rounded-tl-[4rem] rounded-br-[4rem] rounded-tr-none rounded-bl-none shadow-2xl border-8 border-white h-[400px] md:h-[500px] lg:h-[550px]">
                 <Image 
                   src="/images/hero-dra-finatti.jpg"
                   alt="Dra. Izabella Novo Finatti - Médica Patologista"
                   fill
                   className="object-cover object-top"
                   priority
+                  quality={90}
                 />
               </div>
               

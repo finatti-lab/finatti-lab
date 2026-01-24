@@ -51,11 +51,10 @@ export default function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div className="grid grid-cols-3 gap-4 md:gap-6 max-w-md">
               {[
                 { value: '100%', label: 'Credibilidade' },
                 { value: '24h', label: 'Agilidade' },
-                { value: '10+', label: 'Anos' },
                 { value: '∞', label: 'Humanidade' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center lg:text-left">
@@ -69,37 +68,36 @@ export default function Hero() {
           {/* Imagem - Direita */}
           <div className="flex justify-center lg:justify-end order-1 lg:order-2">
             <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg">
-              {/* Placeholder para imagem - com máscara estilo Finatti */}
+              {/* Isotipo decorativo atrás */}
+              <div className="absolute inset-0 -z-10 opacity-20 scale-110 hidden md:block">
+                <Image 
+                  src="/images/06.png"
+                  alt=""
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              
+              {/* Imagem da Dra. com máscara estilo Finatti */}
               <div className="
+                relative
                 overflow-hidden 
                 rounded-tl-[3rem] rounded-br-[3rem] 
                 rounded-tr-none rounded-bl-none
                 shadow-2xl
-                bg-gradient-to-br from-terracota/20 to-teal/20
-                aspect-[3/4]
-                flex items-center justify-center
                 border-4 border-white
+                max-h-[500px] h-[400px] md:h-[500px]
               ">
-                {/* Placeholder - será substituído por imagem real */}
-                <div className="text-center p-8">
-                  <Eye size={64} className="text-terracota/30 mx-auto mb-4" />
-                  <p className="text-gray-500 text-sm">
-                    Imagem da Dra. Izabella<br />
-                    <span className="text-xs">(hero-dra-finatti.jpg)</span>
-                  </p>
-                </div>
-                {/* Quando tiver a imagem, usar:
                 <Image 
                   src="/images/hero-dra-finatti.jpg"
                   alt="Dra. Izabella Novo Finatti - Médica Patologista"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   priority
                 />
-                */}
               </div>
               
-              {/* Elemento decorativo opcional */}
+              {/* Elemento decorativo */}
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-teal/10 rounded-tl-[2rem] rounded-br-[2rem] -z-10" />
             </div>
           </div>

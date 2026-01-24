@@ -30,31 +30,18 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white shadow-lg py-3 md:py-4' 
-          : 'bg-transparent py-4 md:py-6'
+          : 'bg-white/95 backdrop-blur-sm shadow-md py-4 md:py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#hero" className="relative h-12 md:h-14 w-48 md:w-64">
-            {/* Logo Branca (quando header transparente) */}
-            <Image
-              src="/images/01-branco.png"
-              alt="Finatti Medicina Diagnóstica"
-              fill
-              className={`object-contain transition-opacity duration-300 ${
-                isScrolled ? 'opacity-0' : 'opacity-100'
-              }`}
-              priority
-            />
-            {/* Logo Laranja (quando header branco) */}
             <Image
               src="/images/01-laranja.png"
               alt="Finatti Medicina Diagnóstica"
               fill
-              className={`object-contain transition-opacity duration-300 ${
-                isScrolled ? 'opacity-100' : 'opacity-0'
-              }`}
+              className="object-contain"
               priority
             />
           </a>
@@ -65,11 +52,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`transition-colors font-medium text-sm xl:text-base ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-terracota' 
-                    : 'text-white hover:text-areia'
-                }`}
+                className="transition-colors font-medium text-sm xl:text-base text-stone-800 hover:text-terracota"
               >
                 {link.label}
               </a>
@@ -82,9 +65,7 @@ export default function Header() {
               href="https://www.instagram.com/finattilab/"
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-2 transition-colors ${
-                isScrolled ? 'text-terracota hover:text-terracota-dark' : 'text-white hover:text-areia'
-              }`}
+              className="p-2 transition-colors text-terracota hover:text-terracota-dark"
               aria-label="Instagram"
             >
               <Instagram size={22} />
@@ -93,11 +74,7 @@ export default function Header() {
               href="https://finattipatologia.pathoweb.com.br/"
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-2 px-4 xl:px-5 py-2 xl:py-2.5 finatti-border border-2 transition-all hover:scale-105 text-sm xl:text-base font-medium ${
-                isScrolled 
-                  ? 'border-terracota text-terracota hover:bg-terracota hover:text-white' 
-                  : 'border-white text-white hover:bg-white hover:text-terracota'
-              }`}
+              className="flex items-center gap-2 px-4 xl:px-5 py-2 xl:py-2.5 finatti-border border-2 border-teal text-teal hover:bg-teal hover:text-white transition-all hover:scale-105 text-sm xl:text-base font-medium"
             >
               <FileText size={18} />
               <span>Resultados</span>
@@ -106,7 +83,7 @@ export default function Header() {
               href="https://wa.me/5544991272027?text=Finatti+Laboratório+de+Patologia+e+Citopatologia"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-terracota text-white px-4 xl:px-5 py-2 xl:py-2.5 finatti-border hover:bg-terracota-dark transition-all hover:scale-105 text-sm xl:text-base font-medium shadow-lg"
+              className="flex items-center gap-2 bg-[#25D366] text-white px-4 xl:px-5 py-2 xl:py-2.5 finatti-border hover:bg-[#1ea952] transition-all hover:scale-105 text-sm xl:text-base font-medium shadow-lg"
             >
               <Phone size={18} />
               <span>WhatsApp</span>
@@ -116,9 +93,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden p-2 transition-colors ${
-              isScrolled ? 'text-terracota' : 'text-white'
-            }`}
+            className="lg:hidden p-2 transition-colors text-terracota"
             aria-label="Menu"
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -127,17 +102,13 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <nav className="lg:hidden mt-4 pb-4 flex flex-col gap-3 border-t border-white/20 pt-4">
+          <nav className="lg:hidden mt-4 pb-4 flex flex-col gap-3 border-t border-gray-200 pt-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`transition-colors font-medium ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-terracota' 
-                    : 'text-white hover:text-areia'
-                }`}
+                className="transition-colors font-medium text-stone-800 hover:text-terracota"
               >
                 {link.label}
               </a>
@@ -146,11 +117,7 @@ export default function Header() {
               href="https://finattipatologia.pathoweb.com.br/"
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-2 px-4 py-2.5 finatti-border border-2 transition-colors w-fit mt-2 font-medium ${
-                isScrolled 
-                  ? 'border-terracota text-terracota hover:bg-terracota hover:text-white' 
-                  : 'border-white text-white hover:bg-white hover:text-terracota'
-              }`}
+              className="flex items-center gap-2 px-4 py-2.5 finatti-border border-2 border-teal text-teal hover:bg-teal hover:text-white transition-colors w-fit mt-2 font-medium"
             >
               <FileText size={18} />
               <span>Resultados</span>
@@ -159,7 +126,7 @@ export default function Header() {
               href="https://wa.me/5544991272027?text=Finatti+Laboratório+de+Patologia+e+Citopatologia"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-terracota text-white px-4 py-2.5 finatti-border hover:bg-terracota-dark transition-colors w-fit font-medium"
+              className="flex items-center gap-2 bg-[#25D366] text-white px-4 py-2.5 finatti-border hover:bg-[#1ea952] transition-colors w-fit font-medium"
             >
               <Phone size={18} />
               <span>WhatsApp</span>

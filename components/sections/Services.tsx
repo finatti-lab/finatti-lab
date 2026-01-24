@@ -1,6 +1,7 @@
 'use client';
 
 import { Microscope, FileText, Activity, Dna, Brain, Bone, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 import Section from '../ui/Section';
 import SectionTitle from '../ui/SectionTitle';
 import Card from '../ui/Card';
@@ -46,7 +47,16 @@ export default function Services() {
   ];
 
   return (
-    <Section id="servicos" background="white">
+    <Section id="servicos" background="white" className="relative">
+      {/* Isotipo decorativo */}
+      <div className="absolute right-0 top-20 w-64 h-64 lg:w-96 lg:h-96 opacity-10 pointer-events-none hidden md:block">
+        <Image 
+          src="/images/06.png" 
+          alt="" 
+          fill 
+          className="object-contain"
+        />
+      </div>
       <SectionTitle
         title="Nossos Serviços"
         subtitle="Exames especializados com tecnologia de ponta e olhar humanizado"

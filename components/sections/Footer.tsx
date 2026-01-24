@@ -1,10 +1,20 @@
 'use client';
 
 import { Heart, MapPin, Phone, Mail, Instagram, Facebook, Linkedin } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-white relative overflow-hidden">
+      {/* Isotipo decorativo branco */}
+      <div className="absolute bottom-0 right-0 w-64 h-64 lg:w-96 lg:h-96 opacity-5 pointer-events-none hidden md:block">
+        <Image 
+          src="/images/05b.png" 
+          alt="" 
+          fill 
+          className="object-contain"
+        />
+      </div>
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {/* Logo e Descrição */}

@@ -1,12 +1,24 @@
 'use client';
 
-import { Heart, Target, Sparkles } from 'lucide-react';
+import { Heart, Target } from 'lucide-react';
+import Image from 'next/image';
 import Section from '../ui/Section';
 import SectionTitle from '../ui/SectionTitle';
 
 export default function About() {
   return (
-    <Section id="sobre" background="white">
+    <Section id="sobre" background="white" className="relative">
+      {/* Pattern de cruzes decorativo */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none hidden md:block">
+        <div 
+          className="w-full h-full"
+          style={{
+            backgroundImage: 'url(/images/20.png)',
+            backgroundRepeat: 'repeat',
+            backgroundSize: '200px',
+          }}
+        />
+      </div>
       <SectionTitle
         title="Nossa História"
         subtitle="Medicina para servir, não para mercantilizar"

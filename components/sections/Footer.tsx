@@ -12,20 +12,22 @@ export default function Footer() {
       
       {/* MOBILE: Layout simplificado */}
       <div className="lg:hidden py-12 px-4 text-center relative z-10">
-        {/* Logo */}
+        {/* Logo + Slogan */}
         <div className="mb-8">
-          <div className="flex items-center justify-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-terracota finatti-border-alt flex items-center justify-center text-white font-bold text-lg">
-              F
-            </div>
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <Image 
+              src="/images/05b.png"
+              alt="Finatti"
+              width={40}
+              height={40}
+            />
             <div className="text-left">
-              <h3 className="text-base font-bold">Finatti</h3>
+              <h3 className="text-lg font-bold">Finatti</h3>
               <p className="text-xs text-gray-400">Medicina Diagnóstica</p>
             </div>
           </div>
-          <p className="text-xs text-gray-400 mt-2">Seus olhos em cada exame</p>
-          <p className="text-xs text-white/60 italic mt-1">
-            "A resposta que você precisa no tempo que você merece"
+          <p className="text-sm text-white/80 italic">
+            A resposta que você precisa no tempo que você merece
           </p>
         </div>
         
@@ -75,25 +77,24 @@ export default function Footer() {
 
       {/* DESKTOP: Layout original */}
       <div className="hidden lg:block max-w-7xl mx-auto px-8 py-12 relative z-10">
-        <div className="grid grid-cols-5 gap-8">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-terracota finatti-border-alt flex items-center justify-center text-white font-bold text-lg">
-                F
-              </div>
-              <div>
-                <h3 className="text-lg font-bold">Finatti</h3>
-                <p className="text-xs text-gray-400">Medicina Diagnóstica</p>
-              </div>
-            </div>
-            <p className="text-sm text-gray-400 mb-2 leading-relaxed">
-              Seus olhos em cada exame.
-            </p>
-            <p className="text-sm text-white/80 italic">
-              "A resposta que você precisa no tempo que você merece"
-            </p>
+        {/* Logo + Slogan no topo */}
+        <div className="mb-10">
+          <div className="flex items-center gap-3 mb-3">
+            <Image 
+              src="/images/05b.png"
+              alt="Finatti"
+              width={40}
+              height={40}
+            />
+            <span className="text-2xl font-bold text-white">Finatti</span>
+            <span className="text-white/70 text-sm">Medicina Diagnóstica</span>
           </div>
+          <p className="text-white/80 italic">
+            A resposta que você precisa no tempo que você merece
+          </p>
+        </div>
 
+        <div className="grid grid-cols-4 gap-8">
           {/* Navegação */}
           <div>
             <h4 className="font-bold mb-3 text-base">Navegação</h4>

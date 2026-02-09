@@ -1,6 +1,6 @@
 'use client';
 
-import { MessageCircle } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function WhatsAppButton() {
   const whatsappUrl = 'https://wa.me/5544991272027?text=Finatti+Laboratório+de+Patologia+e+Citopatologia';
@@ -10,10 +10,11 @@ export default function WhatsAppButton() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 finatti-border shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 z-50 animate-pulse hover:animate-none"
+      className="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-tl-2xl rounded-br-2xl shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 z-50"
       aria-label="Falar no WhatsApp"
+      title="Fale conosco no WhatsApp"
     >
-      <MessageCircle size={28} />
+      <WhatsAppIcon className="w-7 h-7" />
     </a>
   );
 }

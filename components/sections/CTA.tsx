@@ -1,7 +1,7 @@
 'use client';
 
-import { MessageCircle } from 'lucide-react';
 import Image from 'next/image';
+import WhatsAppIcon from '../ui/WhatsAppIcon';
 
 export default function CTA() {
   return (
@@ -31,9 +31,9 @@ export default function CTA() {
           href="https://wa.me/5544991272027?text=Finatti+Laboratório+de+Patologia+e+Citopatologia"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full lg:w-auto inline-flex items-center justify-center gap-2 bg-white text-terracota px-8 py-4 rounded-tl-xl rounded-br-xl font-bold text-base lg:text-lg hover:scale-105 transition-transform shadow-2xl"
+          className="w-full lg:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ea952] text-white px-8 py-4 rounded-tl-xl rounded-br-xl font-bold text-base lg:text-lg hover:scale-105 transition-all shadow-2xl"
         >
-          <MessageCircle size={20} />
+          <WhatsAppIcon className="w-5 h-5" />
           Chamar no WhatsApp
         </a>
       </div>

@@ -29,12 +29,12 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-mefta text-3xl font-bold text-terracota mb-4 leading-tight text-center">
+          <h1 className="font-mefta text-2xl md:text-3xl font-bold text-stone-900 mb-6 leading-tight text-center">
             A resposta que você precisa no <span className="text-teal">tempo que você merece</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base text-stone-700 mb-6 leading-relaxed text-center">
+          <p className="text-sm md:text-base text-stone-700 mb-6 leading-relaxed text-center">
             Laboratório de Patologia e Citopatologia em Cianorte-PR. Diagnóstico preciso, onde cada exame é tratado com credibilidade, agilidade e humanidade.
           </p>
 
@@ -93,11 +93,11 @@ export default function Hero() {
               <span className="text-terracota font-semibold text-sm">Seus olhos em cada exame</span>
             </div>
 
-            <h1 className="font-mefta text-6xl xl:text-7xl font-bold text-terracota mb-6 leading-[1.1]">
+            <h1 className="font-mefta text-4xl lg:text-5xl font-bold text-stone-900 mb-6 leading-tight">
               A resposta que você precisa no <span className="text-teal">tempo que você merece</span>
             </h1>
 
-            <p className="text-lg lg:text-xl text-stone-700 mb-8 leading-relaxed max-w-xl">
+            <p className="text-lg text-stone-700 mb-8 leading-relaxed max-w-xl">
               Laboratório de Patologia e Citopatologia em Cianorte-PR. Diagnóstico preciso, onde cada exame é tratado com credibilidade, agilidade e humanidade.
             </p>
 

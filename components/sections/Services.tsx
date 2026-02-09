@@ -1,12 +1,14 @@
 'use client';
 
 import { Microscope, FileText, Dna, TestTube, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Services() {
   const services = [
     {
       icon: Microscope,
       title: 'Histopatologia',
+      image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80',
       items: [
         'Histopatológico',
         'Biópsias',
@@ -16,6 +18,7 @@ export default function Services() {
     {
       icon: FileText,
       title: 'Citopatologia',
+      image: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&q=80',
       items: [
         'Citologia oncótica',
         'Exame colpocitológico',
@@ -26,6 +29,7 @@ export default function Services() {
     {
       icon: TestTube,
       title: 'Imuno-histoquímica',
+      image: 'https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&q=80',
       items: [
         'Exame imuno-histoquímico',
         'Imunofluorescência direta',
@@ -36,6 +40,7 @@ export default function Services() {
     {
       icon: Dna,
       title: 'Patologia Molecular',
+      image: 'https://images.unsplash.com/photo-1614935151651-0bea6508db6b?w=600&q=80',
       items: [
         'PCR em doenças infecciosas',
         'Sequenciamento direto',
@@ -56,58 +61,69 @@ export default function Services() {
           </p>
         </div>
 
-        {/* MOBILE: Lista vertical compacta */}
+        {/* MOBILE: Cards com imagens */}
         <div className="space-y-4 lg:hidden">
           {services.map((service) => (
-            <div key={service.title} className="bg-areia/30 border border-areia hover:border-terracota rounded-tl-xl rounded-br-xl p-4 transition-all">
-              <div className="flex items-start gap-3 mb-3">
-                <div className="w-12 h-12 bg-terracota/10 rounded-tl-lg rounded-br-lg flex items-center justify-center flex-shrink-0">
-                  <service.icon className="w-6 h-6 text-terracota" />
-                </div>
-                <h3 className="font-bold text-terracota text-base">{service.title}</h3>
+            <div key={service.title} className="bg-white border border-areia hover:border-terracota rounded-tl-2xl rounded-br-2xl overflow-hidden transition-all hover:shadow-lg group">
+              {/* Imagem no topo */}
+              <div className="h-32 relative overflow-hidden">
+                <Image 
+                  src={service.image} 
+                  alt={service.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-terracota/20 to-transparent" />
               </div>
-              <ul className="space-y-1.5 pl-1">
-                {service.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-stone-600 text-sm">
-                    <span className="w-1.5 h-1.5 bg-teal rounded-full flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              
+              {/* Conteúdo */}
+              <div className="p-4">
+                <h3 className="text-lg font-bold text-terracota mb-3">{service.title}</h3>
+                <ul className="space-y-1.5">
+                  {service.items.map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-stone-600 text-sm">
+                      <span className="w-1.5 h-1.5 bg-teal rounded-full flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* DESKTOP: Grid 2 colunas com cards maiores */}
+        {/* DESKTOP: Grid 2 colunas com imagens */}
         <div className="hidden lg:grid lg:grid-cols-2 gap-6">
           {services.map((service) => (
             <div 
               key={service.title} 
-              className="group bg-areia/30 border-2 border-areia hover:border-terracota rounded-tl-3xl rounded-br-3xl p-8 transition-all hover:shadow-lg"
+              className="group bg-white border border-areia hover:border-terracota rounded-tl-3xl rounded-br-3xl overflow-hidden transition-all hover:shadow-lg"
             >
-              {/* Ícone grande */}
-              <div className="w-16 h-16 bg-terracota/10 rounded-tl-xl rounded-br-xl flex items-center justify-center mb-4 group-hover:bg-terracota/20 transition-colors">
-                <service.icon className="w-8 h-8 text-terracota" />
+              {/* Imagem no topo */}
+              <div className="h-40 relative overflow-hidden">
+                <Image 
+                  src={service.image} 
+                  alt={service.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-terracota/20 to-transparent" />
               </div>
               
-              <h3 className="text-2xl font-bold text-terracota mb-4">{service.title}</h3>
-              
-              {/* Lista de exames */}
-              <ul className="space-y-2.5 mb-6">
-                {service.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-stone-600">
-                    <span className="w-1.5 h-1.5 bg-teal rounded-full flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              
-              <a 
-                href="#contato" 
-                className="inline-flex items-center gap-2 text-terracota font-medium group-hover:gap-3 transition-all"
-              >
-                Saiba mais <ArrowRight className="w-4 h-4" />
-              </a>
+              {/* Conteúdo */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-terracota mb-3">{service.title}</h3>
+                
+                {/* Lista de exames */}
+                <ul className="space-y-2">
+                  {service.items.map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-stone-600 text-sm">
+                      <span className="w-1.5 h-1.5 bg-teal rounded-full flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

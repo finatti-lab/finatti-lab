@@ -1,45 +1,54 @@
 'use client';
 
-import { Shield, Zap, Lightbulb, Users, Layout, Award, Heart, Briefcase } from 'lucide-react';
+import { Microscope, Clock, Shield, Users, Award, Zap } from 'lucide-react';
 import Image from 'next/image';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+import { useCallback } from 'react';
 
 export default function Differentials() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 4000, stopOnInteraction: false })
+  ]);
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
   const differentials = [
     {
-      icon: Shield,
+      icon: Microscope,
       title: 'Credibilidade',
-      description: 'Resultados confiáveis que médicos e pacientes podem confiar plenamente.',
-      featured: true,
+      description: 'Resultados que médicos e pacientes podem confiar plenamente. Nossa reputação é construída sobre precisão e excelência.',
     },
     {
-      icon: Zap,
+      icon: Clock,
       title: 'Agilidade',
-      description: 'Laudos rápidos sem comprometer a qualidade. Seu tempo é valioso.',
+      description: 'Sem longas esperas por um resultado. Seu tempo é valioso.',
     },
     {
-      icon: Lightbulb,
-      title: 'Inovação',
-      description: 'Tecnologia de ponta e métodos atualizados para diagnósticos precisos.',
+      icon: Shield,
+      title: 'Segurança',
+      description: 'Protocolos rigorosos de qualidade em todas as etapas do processo diagnóstico.',
     },
     {
       icon: Users,
-      title: 'Acessibilidade',
-      description: 'Medicina diagnóstica de qualidade ao alcance de todos.',
-    },
-    {
-      icon: Layout,
-      title: 'Organização',
-      description: 'Processos estruturados para garantir eficiência em cada etapa.',
+      title: 'Humanização',
+      description: 'Atendimento personalizado e acolhedor, porque cada paciente é único.',
     },
     {
       icon: Award,
-      title: 'Disciplina',
-      description: 'Rigor técnico e científico em todos os nossos procedimentos.',
+      title: 'Excelência',
+      description: 'Compromisso com os mais altos padrões de qualidade em medicina diagnóstica.',
     },
     {
-      icon: Heart,
-      title: 'Humanidade',
-      description: 'Cada exame é tratado com empatia, cuidado e atenção individual.',
+      icon: Zap,
+      title: 'Tecnologia',
+      description: 'Equipamentos de última geração para diagnósticos cada vez mais precisos.',
     },
   ];
 
@@ -75,43 +84,44 @@ export default function Differentials() {
           ))}
         </div>
 
-        {/* DESKTOP: Bento Grid original */}
-        <div className="hidden lg:grid lg:grid-cols-4 gap-6">
-          <div className="col-span-2 row-span-2 bg-white rounded-tl-[3rem] rounded-br-[3rem] overflow-hidden group hover:shadow-2xl transition-all">
-            <div className="relative h-64 overflow-hidden">
-              <Image 
-                src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80" 
-                alt="Microscópio"
-                fill
-                className="object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-terracota/90 to-transparent" />
-              <div className="absolute bottom-4 left-4">
-                <Shield className="text-white mb-2" size={40} />
-              </div>
-            </div>
-            <div className="p-8">
-              <h3 className="text-3xl font-bold text-terracota mb-3">Credibilidade</h3>
-              <p className="text-base text-stone-600 leading-relaxed">
-                Resultados confiáveis que médicos e pacientes podem confiar plenamente. Nossa reputação é construída sobre precisão e excelência.
-              </p>
+        {/* DESKTOP: Carrossel com Embla */}
+        <div className="hidden lg:block relative">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex">
+              {differentials.map((item) => (
+                <div key={item.title} className="flex-[0_0_33.33%] px-3">
+                  <div className="bg-white rounded-tl-[2rem] rounded-br-[2rem] p-6 hover:shadow-xl hover:-translate-y-2 transition-all group h-full">
+                    <div className="w-12 h-12 bg-teal rounded-tl-xl rounded-br-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <item.icon className="text-white" size={24} />
+                    </div>
+                    <h3 className="text-xl font-bold text-teal mb-2">{item.title}</h3>
+                    <p className="text-stone-600 text-sm leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-          
-          {differentials.slice(1).map((item) => (
-            <div key={item.title} className="bg-white rounded-tl-[2rem] rounded-br-[2rem] p-6 hover:shadow-xl hover:-translate-y-2 transition-all group">
-              <div className="w-12 h-12 bg-teal rounded-tl-xl rounded-br-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <item.icon className="text-white" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-teal mb-2">{item.title}</h3>
-              <p className="text-stone-600 text-sm leading-relaxed">{item.description}</p>
-            </div>
-          ))}
+
+          {/* Setas de navegação */}
+          <button
+            onClick={scrollPrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-terracota hover:text-white transition-colors"
+            aria-label="Anterior"
+          >
+            ←
+          </button>
+          <button
+            onClick={scrollNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-terracota hover:text-white transition-colors"
+            aria-label="Próximo"
+          >
+            →
+          </button>
         </div>
 
         <div className="text-center mt-12 lg:mt-16 max-w-3xl mx-auto">
           <p className="text-white text-lg lg:text-2xl font-semibold mb-3">
-            Precisão com propósito. Diagnóstico é cuidado.
+            Precisão. Diagnóstico é cuidado.
           </p>
           <p className="text-white/80 text-sm lg:text-lg">
             Cada um desses valores se reflete em nosso trabalho diário, garantindo que você receba não apenas um resultado, mas um cuidado completo.

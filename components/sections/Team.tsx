@@ -8,7 +8,7 @@ import SectionTitle from '../ui/SectionTitle';
 export default function Team() {
   const team = [
     {
-      name: 'Dra. Izabella Novo Finatti',
+      name: 'Dra. Izabella Finatti Cerci',
       role: 'Médica Patologista | Cofundadora',
       crm: 'CRM-PR 44595 / RQE 34647',
       description: 'Especialista em patologia com anos de experiência em diagnóstico. Apaixonada por medicina de precisão e pelo cuidado humanizado.',
@@ -16,12 +16,12 @@ export default function Team() {
       image: '/images/dra-izabella-2.jpeg',
     },
     {
-      name: 'Guilherme Cerci',
-      role: 'Gestor | Cofundador',
-      crm: '',
+      name: 'Dr. Guilherme Cerci',
+      role: 'Médico, Gestor e Cofundador',
+      crm: 'CRM-PR 55437',
       description: 'Responsável pela gestão estratégica e operacional. Comprometido em levar medicina diagnóstica de excelência a todos.',
       email: 'guilherme@finatti.com.br',
-      image: null,
+      image: '/images/dr-guilherme-cerci.jpeg',
     },
   ];
 
@@ -39,13 +39,13 @@ export default function Team() {
           <div className="h-[300px] relative">
             <Image 
               src="/images/dra-izabella-2.jpeg" 
-              alt="Dra. Izabella Novo Finatti"
+              alt="Dra. Izabella Finatti Cerci"
               fill 
               className="object-cover object-top"
             />
           </div>
           <div className="p-6">
-            <h3 className="text-xl font-bold text-terracota">Dra. Izabella Novo Finatti</h3>
+            <h3 className="text-xl font-bold text-terracota">Dra. Izabella Finatti Cerci</h3>
             <p className="text-teal font-medium text-sm">Médica Patologista | Cofundadora</p>
             <p className="text-stone-600 text-sm mt-2">Especialista em patologia com anos de experiência em diagnóstico.</p>
             <p className="text-xs text-stone-500 mt-2">CRM-PR 44595 / RQE 34647</p>
@@ -59,13 +59,20 @@ export default function Team() {
           </div>
         </div>
         
-        {/* Card Guilherme */}
+        {/* Card Dr. Guilherme */}
         <div className="bg-teal text-white p-6 rounded-tl-2xl rounded-br-2xl">
-          <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center text-xl font-bold mb-4">
-            GC
+          <div className="w-24 h-24 rounded-tl-xl rounded-br-xl bg-white/20 overflow-hidden mb-4">
+            <Image 
+              src="/images/dr-guilherme-cerci.jpeg" 
+              alt="Dr. Guilherme Cerci"
+              width={96}
+              height={96}
+              className="object-cover"
+            />
           </div>
-          <h3 className="text-xl font-bold">Guilherme Cerci</h3>
-          <p className="text-white/80 text-sm">Gestor | Cofundador</p>
+          <h3 className="text-xl font-bold">Dr. Guilherme Cerci</h3>
+          <p className="text-white/80 text-sm">Médico, Gestor e Cofundador</p>
+          <p className="text-white/60 text-xs mt-2">CRM-PR 55437</p>
           <p className="text-white/70 text-sm mt-2">Responsável pela gestão estratégica e operacional.</p>
           <a
             href="mailto:guilherme@finatti.com.br"
@@ -90,7 +97,7 @@ export default function Team() {
           </div>
           <div className="p-10 flex flex-col justify-center bg-areia/50">
             <h3 className="text-4xl font-bold text-terracota mb-2">
-              Dra. Izabella Novo Finatti
+              Dra. Izabella Finatti Cerci
             </h3>
             <p className="text-teal font-semibold text-lg mb-1">
               Médica Patologista | Cofundadora
@@ -112,14 +119,23 @@ export default function Team() {
         </div>
         
         <div className="bg-teal text-white p-8 rounded-tl-[3rem] rounded-br-[3rem] flex flex-col justify-center shadow-xl hover:shadow-2xl transition-all">
-          <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl font-bold mb-6">
-            GC
+          <div className="w-24 h-24 rounded-tl-xl rounded-br-xl bg-white/20 overflow-hidden mb-6">
+            <Image 
+              src="/images/dr-guilherme-cerci.jpeg" 
+              alt="Dr. Guilherme Cerci"
+              width={96}
+              height={96}
+              className="object-cover w-full h-full"
+            />
           </div>
           <h3 className="text-3xl font-bold mb-2">
-            Guilherme Cerci
+            Dr. Guilherme Cerci
           </h3>
-          <p className="text-white/90 font-semibold mb-4">
-            Gestor | Cofundador
+          <p className="text-white/90 font-semibold mb-1">
+            Médico, Gestor e Cofundador
+          </p>
+          <p className="text-white/60 text-sm mb-4">
+            CRM-PR 55437
           </p>
           <p className="text-white/80 leading-relaxed mb-6">
             Responsável pela gestão estratégica e operacional. Comprometido em levar medicina diagnóstica de excelência a todos.

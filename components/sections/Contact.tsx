@@ -52,7 +52,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="text-stone-600 text-xs hover:text-terracota"
               >
-                Av. Espírito Santo, 130<br/>Zona 1 - Cianorte-PR
+                Av. Espírito Santo, 130<br/>Zona 1 - Cianorte-PR<br/>CEP: 87200-097
               </a>
             </div>
             <div>
@@ -63,13 +63,13 @@ export default function Contact() {
             </div>
             <div>
               <span className="font-bold text-terracota block mb-1">E-mail</span>
-              <a href="mailto:contato@finatti.com.br" className="text-stone-600 text-xs hover:text-terracota">
-                contato@finatti.com.br
+              <a href="mailto:finattipatologia@gmail.com" className="text-stone-600 text-xs hover:text-terracota">
+                finattipatologia@gmail.com
               </a>
             </div>
             <div>
               <span className="font-bold text-terracota block mb-1">Horário</span>
-              <span className="text-stone-600 text-xs">Seg-Sex: 8h às 18h</span>
+              <span className="text-stone-600 text-xs">Seg-Sex: 8h às 18h<br/>Sábado: 8h às 12h</span>
             </div>
           </div>
         </div>
@@ -158,7 +158,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="text-white/90 hover:text-white transition-colors"
                   >
-                    Av. Espírito Santo, 130 - Zona 1<br />Cianorte - PR, 87200-000
+                    Av. Espírito Santo, 130 - Zona 1<br />Cianorte - PR, CEP: 87200-097
                   </a>
                 </div>
               </div>
@@ -177,8 +177,8 @@ export default function Contact() {
                 <Mail className="text-white flex-shrink-0 mt-1" size={28} />
                 <div>
                   <h4 className="font-bold text-white mb-2 text-lg">E-mail</h4>
-                  <a href="mailto:contato@finatti.com.br" className="text-white/90 hover:text-white transition-colors">
-                    contato@finatti.com.br
+                  <a href="mailto:finattipatologia@gmail.com" className="text-white/90 hover:text-white transition-colors">
+                    finattipatologia@gmail.com
                   </a>
                 </div>
               </div>
@@ -187,7 +187,7 @@ export default function Contact() {
                 <Clock className="text-white flex-shrink-0 mt-1" size={28} />
                 <div>
                   <h4 className="font-bold text-white mb-2 text-lg">Horário</h4>
-                  <p className="text-white/90">Segunda a Sexta<br />8h às 18h</p>
+                  <p className="text-white/90">Segunda a Sexta: 8h às 18h<br />Sábado: 8h às 12h</p>
                 </div>
               </div>
             </div>

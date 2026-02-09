@@ -51,7 +51,7 @@ export default function About() {
                 <Target className="text-white" size={20} />
               </div>
               <div>
-                <h3 className="font-bold text-terracota mb-1">Precisão com Propósito</h3>
+                <h3 className="font-bold text-terracota mb-1">Precisão</h3>
                 <p className="text-sm text-stone-600">Tecnologia aliada à expertise médica para diagnósticos assertivos.</p>
               </div>
             </div>
@@ -77,13 +77,13 @@ export default function About() {
             
             <span className="text-terracota font-semibold text-sm uppercase tracking-wider mb-4">Nossa História</span>
             <h2 className="font-mefta text-5xl font-bold text-stone-900 mb-6 leading-tight">
-              Medicina para servir, não para mercantilizar
+              Medicina para servir
             </h2>
             
             <div className="space-y-4 text-stone-700 text-lg leading-relaxed mb-8">
               <p>
                 A <strong className="text-terracota">Finatti Medicina Diagnóstica</strong> nasceu do sonho de 
-                dois profissionais apaixonados pela medicina: <strong>Dra. Izabella Novo Finatti</strong> e <strong>Guilherme Cerci</strong>.
+                dois profissionais apaixonados pela medicina: <strong>Dra. Izabella Finatti Cerci</strong> e <strong>Dr. Guilherme Cerci</strong>.
               </p>
 
               <p>
@@ -116,7 +116,7 @@ export default function About() {
             },
             {
               icon: Target,
-              title: 'Precisão com Propósito',
+              title: 'Precisão',
               description: 'Tecnologia aliada à expertise médica para diagnósticos assertivos.',
             },
           ].map((value) => (

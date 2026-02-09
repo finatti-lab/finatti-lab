@@ -1,11 +1,11 @@
 'use client';
 
-import { ArrowRight, Eye } from 'lucide-react';
+import { Shield, Clock, Heart, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center bg-areia overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center bg-areia overflow-hidden pt-20 md:pt-24">
       {/* Isotipo decorativo gigante rotacionado */}
       <div className="absolute -right-32 top-20 w-[600px] h-[600px] opacity-5 rotate-12 hidden lg:block pointer-events-none">
         <Image 
@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-96 h-96 bg-terracota/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal/5 rounded-full blur-3xl" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-12 md:py-24 lg:py-32">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-12 md:py-16 lg:py-20">
         {/* MOBILE: Layout vertical simples */}
         <div className="lg:hidden">
           {/* Badge */}
@@ -30,12 +30,12 @@ export default function Hero() {
 
           {/* Headline */}
           <h1 className="font-mefta text-3xl font-bold text-terracota mb-4 leading-tight text-center">
-            Enxergamos o que <span className="text-teal">outros não veem</span>
+            A resposta que você precisa no <span className="text-teal">tempo que você merece</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-base text-stone-700 mb-6 leading-relaxed text-center">
-            Laboratório de patologia em Cianorte-PR. Diagnóstico preciso com propósito.
+            Laboratório de Patologia e Citopatologia em Cianorte-PR. Diagnóstico preciso, onde cada exame é tratado com credibilidade, agilidade e humanidade.
           </p>
 
           {/* CTAs */}
@@ -60,25 +60,25 @@ export default function Hero() {
           <div className="flex justify-center mb-8">
             <div className="relative w-[70%] aspect-[3/4] rounded-tl-[2.5rem] rounded-br-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
               <Image 
-                src="/images/hero-dra-finatti.jpg"
-                alt="Dra. Izabella Novo Finatti"
+                src="/images/dra-izabella.jpeg"
+                alt="Dra. Izabella Finatti Cerci"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-[center_20%]"
                 priority
                 quality={90}
               />
             </div>
           </div>
 
-          {/* Stats compactos */}
+          {/* Stats compactos com ícones */}
           <div className="grid grid-cols-3 gap-4 text-center">
             {[
-              { value: '100%', label: 'Credibilidade' },
-              { value: '24h', label: 'Agilidade' },
-              { value: '∞', label: 'Humanidade' },
+              { icon: Shield, label: 'Credibilidade' },
+              { icon: Clock, label: 'Agilidade' },
+              { icon: Heart, label: 'Humanidade' },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-2xl font-bold text-terracota mb-1">{stat.value}</div>
+                <stat.icon className="w-8 h-8 text-terracota mx-auto mb-2" />
                 <div className="text-xs text-stone-600 font-medium">{stat.label}</div>
               </div>
             ))}
@@ -89,17 +89,16 @@ export default function Hero() {
         <div className="hidden lg:grid lg:grid-cols-5 gap-12 items-center">
           <div className="lg:col-span-3">
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-terracota/20 finatti-border px-4 py-2 mb-6 shadow-sm">
-              <Eye size={16} className="text-terracota" />
+              <Shield size={16} className="text-terracota" />
               <span className="text-terracota font-semibold text-sm">Seus olhos em cada exame</span>
             </div>
 
             <h1 className="font-mefta text-6xl xl:text-7xl font-bold text-terracota mb-6 leading-[1.1]">
-              Enxergamos<br />
-              o que <span className="text-teal">outros<br />não veem</span>
+              A resposta que você precisa no <span className="text-teal">tempo que você merece</span>
             </h1>
 
             <p className="text-lg lg:text-xl text-stone-700 mb-8 leading-relaxed max-w-xl">
-              Laboratório de patologia em Cianorte-PR. Diagnóstico preciso com propósito, onde cada exame é tratado com credibilidade, agilidade e humanidade.
+              Laboratório de Patologia e Citopatologia em Cianorte-PR. Diagnóstico preciso, onde cada exame é tratado com credibilidade, agilidade e humanidade.
             </p>
 
             <div className="flex gap-4 mb-12">
@@ -122,12 +121,12 @@ export default function Hero() {
 
             <div className="grid grid-cols-3 gap-8 max-w-lg">
               {[
-                { value: '100%', label: 'Credibilidade' },
-                { value: '24h', label: 'Agilidade' },
-                { value: '∞', label: 'Humanidade' },
+                { icon: Shield, label: 'Credibilidade' },
+                { icon: Clock, label: 'Agilidade' },
+                { icon: Heart, label: 'Humanidade' },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <div className="text-5xl font-bold text-terracota mb-2">{stat.value}</div>
+                  <stat.icon className="w-12 h-12 text-terracota mb-3" />
                   <div className="text-sm text-stone-600 font-medium">{stat.label}</div>
                 </div>
               ))}
@@ -142,10 +141,10 @@ export default function Hero() {
               
               <div className="relative overflow-hidden rounded-tl-[4rem] rounded-br-[4rem] shadow-2xl border-8 border-white h-[550px]">
                 <Image 
-                  src="/images/hero-dra-finatti.jpg"
-                  alt="Dra. Izabella Novo Finatti - Médica Patologista"
+                  src="/images/dra-izabella.jpeg"
+                  alt="Dra. Izabella Finatti Cerci - Médica Patologista"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-[center_20%]"
                   priority
                   quality={90}
                 />

@@ -25,7 +25,7 @@ export default function Team() {
           </div>
           <div className="p-6">
             <h3 className="text-xl font-bold text-terracota">Dra. Izabella Finatti Cerci</h3>
-            <p className="text-teal font-medium">Médica Patologista | Cofundadora</p>
+            <p className="text-teal font-medium">Médica Patologista e Cofundadora</p>
             <p className="text-stone-600 text-sm mt-3">
               Especialista em patologia com anos de experiência em diagnóstico. 
               Apaixonada por medicina de precisão e pelo cuidado humanizado.
@@ -41,7 +41,7 @@ export default function Team() {
               src="/images/dr-guilherme-cerci.jpeg" 
               alt="Dr. Guilherme Cerci"
               fill 
-              className="object-cover object-top"
+              className="object-cover object-[center_30%]"
             />
           </div>
           <div className="p-6">

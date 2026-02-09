@@ -29,8 +29,8 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-mefta text-2xl md:text-3xl font-bold text-stone-900 mb-6 leading-tight text-center">
-            A resposta que você precisa no <span className="text-teal">tempo que você merece</span>
+          <h1 className="font-mefta text-3xl md:text-4xl font-bold text-stone-900 mb-6 leading-tight text-center max-w-md mx-auto">
+            A resposta que você precisa<br/>no tempo<br/><span className="text-teal">que você merece</span>
           </h1>
 
           {/* Subtitle */}
@@ -93,8 +93,8 @@ export default function Hero() {
               <span className="text-terracota font-semibold text-sm">Seus olhos em cada exame</span>
             </div>
 
-            <h1 className="font-mefta text-4xl lg:text-5xl font-bold text-stone-900 mb-6 leading-tight">
-              A resposta que você precisa no <span className="text-teal">tempo que você merece</span>
+            <h1 className="font-mefta text-5xl lg:text-6xl font-bold text-stone-900 mb-6 leading-tight max-w-2xl">
+              A resposta que você precisa<br/>no tempo<br/><span className="text-teal">que você merece</span>
             </h1>
 
             <p className="text-lg text-stone-700 mb-8 leading-relaxed max-w-xl">

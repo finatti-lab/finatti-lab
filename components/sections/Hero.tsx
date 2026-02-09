@@ -30,7 +30,7 @@ export default function Hero() {
 
           {/* Headline */}
           <h1 className="font-mefta text-3xl md:text-4xl font-bold text-stone-900 mb-6 leading-tight text-center max-w-md mx-auto">
-            A resposta que você precisa<br/>no tempo<br/><span className="text-teal">que você merece</span>
+            A resposta que você<br/>precisa, no tempo<br/><span className="text-teal">que você merece</span>
           </h1>
 
           {/* Subtitle */}
@@ -94,7 +94,7 @@ export default function Hero() {
             </div>
 
             <h1 className="font-mefta text-5xl lg:text-6xl font-bold text-stone-900 mb-6 leading-tight max-w-2xl">
-              A resposta que você precisa<br/>no tempo<br/><span className="text-teal">que você merece</span>
+              A resposta que você<br/>precisa, no tempo<br/><span className="text-teal">que você merece</span>
             </h1>
 
             <p className="text-lg text-stone-700 mb-8 leading-relaxed max-w-xl">

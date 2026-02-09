@@ -1,7 +1,4 @@
-'use client';
-
 import { Heart, Target } from 'lucide-react';
-import Image from 'next/image';
 
 export default function About() {
   return (
@@ -10,19 +7,9 @@ export default function About() {
       <div className="lg:hidden px-4">
         <h2 className="text-2xl font-bold text-terracota text-center mb-6">Nossa História</h2>
         
-        {/* Imagem */}
-        <div className="relative h-[250px] rounded-tl-2xl rounded-br-2xl overflow-hidden mb-6">
-          <Image 
-            src="/images/dra-izabella.jpeg" 
-            alt="Dra. Izabella Novo Finatti"
-            fill 
-            className="object-cover object-[center_20%]"
-          />
-        </div>
-        
         {/* Texto resumido */}
         <p className="text-sm text-stone-700 mb-6 leading-relaxed">
-          A Finatti Medicina Diagnóstica nasceu do sonho de dois profissionais apaixonados pela medicina: Dra. Izabella Novo Finatti e Guilherme Cerci. Unidos pela visão de que diagnóstico é cuidado, eles fundaram um laboratório onde cada exame é tratado com a seriedade que uma vida merece.
+          A Finatti Medicina Diagnóstica nasceu do sonho de dois profissionais apaixonados pela medicina: Dra. Izabella Finatti Cerci e Dr. Guilherme Cerci. Unidos pela visão de que diagnóstico é cuidado, eles fundaram um laboratório onde cada exame é tratado com a seriedade que uma vida merece.
         </p>
         
         {/* Citação compacta */}
@@ -59,24 +46,11 @@ export default function About() {
         </div>
       </div>
 
-      {/* DESKTOP: Layout editorial original */}
-      <div className="hidden lg:block max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-0">
-          <div className="relative h-[700px]">
-            <Image 
-              src="/images/dra-izabella.jpeg" 
-              alt="Dra. Izabella Novo Finatti"
-              fill 
-              className="object-cover object-[center_20%] lg:rounded-tr-[5rem] lg:rounded-bl-[5rem]"
-            />
-          </div>
-          
-          <div className="bg-areia p-16 flex flex-col justify-center relative">
-            {/* Linha vertical decorativa */}
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-terracota hidden lg:block" />
-            
-            <span className="text-terracota font-semibold text-sm uppercase tracking-wider mb-4">Nossa História</span>
-            <h2 className="font-mefta text-5xl font-bold text-stone-900 mb-6 leading-tight">
+      {/* DESKTOP: Layout sem imagem */}
+      <div className="hidden lg:block max-w-5xl mx-auto px-8">
+        <div className="bg-areia p-16 rounded-tl-[3rem] rounded-br-[3rem]">
+            <span className="text-terracota font-semibold text-sm uppercase tracking-wider mb-4 block text-center">Nossa História</span>
+            <h2 className="font-mefta text-5xl font-bold text-stone-900 mb-6 leading-tight text-center">
               Medicina para servir
             </h2>
             
@@ -98,14 +72,14 @@ export default function About() {
               </p>
             </div>
             
-            <blockquote className="border-l-4 border-terracota pl-6 relative">
+            {/* Citação destacada com aspas grandes */}
+            <blockquote className="border-l-4 border-terracota pl-6 relative max-w-3xl mx-auto">
               <span className="absolute -left-2 -top-4 text-6xl text-terracota/20 font-serif">"</span>
               <p className="text-2xl italic text-terracota font-medium leading-relaxed">
                 Enxergamos o que outros não veem porque olhamos com propósito.
               </p>
             </blockquote>
           </div>
-        </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-16 px-8">
           {[

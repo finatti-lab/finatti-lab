@@ -1,7 +1,12 @@
 'use client';
 
-import { MapPin, Phone, Mail, Instagram } from 'lucide-react';
+import { Phone, Instagram, Star } from 'lucide-react';
 import Image from 'next/image';
+
+// TODO(cliente): quando o ID do Google Meu Negócio estiver disponível, trocar por
+// 'https://search.google.com/local/writereview?placeid=<PLACE_ID>' para abrir
+// direto o formulário de avaliação. Até lá, o link leva à ficha no Google Maps.
+const GOOGLE_REVIEW_URL = 'https://maps.app.goo.gl/CCvbrU1Ys1J7odEFh';
 
 export default function Footer() {
   return (
@@ -69,6 +74,22 @@ export default function Footer() {
           </a>
         </div>
         
+        {/* Avaliação no Google */}
+        <div className="mb-8 pt-8 border-t border-white/20">
+          <p className="text-white/70 text-sm mb-3">
+            Gostou do nosso atendimento? Deixe sua avaliação!
+          </p>
+          <a
+            href={GOOGLE_REVIEW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-tl-lg rounded-br-lg transition-colors text-sm"
+          >
+            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+            Avaliar no Google
+          </a>
+        </div>
+
         {/* Copyright */}
         <p className="text-xs text-white/50">
           © 2026 Finatti Medicina Diagnóstica. Todos os direitos reservados.
@@ -155,8 +176,26 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Avaliação no Google */}
+        <div className="mt-12 pt-8 border-t border-white/20">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-white/70 text-sm">
+              Gostou do nosso atendimento? Deixe sua avaliação!
+            </p>
+            <a
+              href={GOOGLE_REVIEW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-tl-lg rounded-br-lg transition-colors text-sm"
+            >
+              <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+              Avaliar no Google
+            </a>
+          </div>
+        </div>
+
         {/* Redes Sociais Desktop */}
-        <div className="flex items-center justify-between mt-12 pt-8 border-t border-white/10">
+        <div className="flex items-center justify-between mt-8 pt-8 border-t border-white/10">
           <p className="text-sm text-gray-400">
             © 2026 Finatti Medicina Diagnóstica. Todos os direitos reservados.
           </p>

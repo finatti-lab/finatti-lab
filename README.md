@@ -192,6 +192,22 @@ npm run build
 # Deploy a pasta .next
 ```
 
+## 🎨 Favicons e OG-Image
+
+Os favicons (`public/favicon-*.png`, `public/apple-icon.png`, `app/favicon.ico`) e a
+imagem de compartilhamento social (`public/og-image.jpg`) são **gerados** a partir do
+isotipo e do logo da marca. Para regerá-los após uma mudança de identidade visual:
+
+```bash
+node scripts/generate-assets.cjs
+```
+
+## 🖼️ Imagens do site
+
+Todas as imagens editoriais (hero e cards de serviços) são declaradas em
+`lib/images.ts`. Para trocar uma foto, adicione o arquivo em `public/images/` e
+atualize apenas esse arquivo — nenhum componente precisa ser alterado.
+
 ## 📞 Suporte
 
 Para dúvidas sobre o código ou customizações, consulte:

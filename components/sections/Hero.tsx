@@ -2,6 +2,7 @@
 
 import { Shield, Clock, Heart, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import { heroImage } from '@/lib/images';
 
 export default function Hero() {
   return (
@@ -56,14 +57,15 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Imagem centralizada 70% */}
+          {/* Imagem do laboratório */}
           <div className="flex justify-center mb-8">
-            <div className="relative w-[70%] aspect-[3/4] rounded-tl-[2.5rem] rounded-br-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
+            <div className="relative w-full aspect-[4/3] rounded-tl-[2.5rem] rounded-br-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
               <Image 
-                src="/images/dra-izabella.jpeg"
-                alt="Dra. Izabella Finatti Cerci"
+                src={heroImage.src}
+                alt={heroImage.alt}
                 fill
-                className="object-cover object-[center_20%]"
+                sizes="100vw"
+                className={`object-cover ${heroImage.objectPosition}`}
                 priority
                 quality={90}
               />
@@ -139,12 +141,13 @@ export default function Hero() {
                 <Image src="/images/06.png" alt="" fill className="object-contain rotate-6" />
               </div>
               
-              <div className="relative overflow-hidden rounded-tl-[4rem] rounded-br-[4rem] shadow-2xl border-8 border-white h-[550px]">
+              <div className="relative overflow-hidden rounded-tl-[4rem] rounded-br-[4rem] shadow-2xl border-8 border-white aspect-[4/3]">
                 <Image 
-                  src="/images/dra-izabella.jpeg"
-                  alt="Dra. Izabella Finatti Cerci - Médica Patologista"
+                  src={heroImage.src}
+                  alt={heroImage.alt}
                   fill
-                  className="object-cover object-[center_20%]"
+                  sizes="(min-width: 1024px) 640px, 100vw"
+                  className={`object-cover ${heroImage.objectPosition}`}
                   priority
                   quality={90}
                 />

@@ -1,14 +1,15 @@
 'use client';
 
-import { Microscope, FileText, Dna, TestTube, ArrowRight } from 'lucide-react';
+import { Microscope, FileText, Dna, TestTube } from 'lucide-react';
 import Image from 'next/image';
+import { serviceImages } from '@/lib/images';
 
 export default function Services() {
   const services = [
     {
       icon: Microscope,
       title: 'Histopatologia',
-      image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80',
+      image: serviceImages.histopatologia,
       items: [
         'Histopatológico',
         'Biópsias',
@@ -18,7 +19,7 @@ export default function Services() {
     {
       icon: FileText,
       title: 'Citopatologia',
-      image: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&q=80',
+      image: serviceImages.citopatologia,
       items: [
         'Citologia oncótica',
         'Exame colpocitológico',
@@ -29,7 +30,7 @@ export default function Services() {
     {
       icon: TestTube,
       title: 'Imuno-histoquímica',
-      image: 'https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&q=80',
+      image: serviceImages.imunoHistoquimica,
       items: [
         'Exame imuno-histoquímico',
         'Imunofluorescência direta',
@@ -40,7 +41,7 @@ export default function Services() {
     {
       icon: Dna,
       title: 'Patologia Molecular',
-      image: 'https://images.unsplash.com/photo-1614935151651-0bea6508db6b?w=600&q=80',
+      image: serviceImages.patologiaMolecular,
       items: [
         'PCR em doenças infecciosas',
         'Sequenciamento direto',
@@ -71,6 +72,7 @@ export default function Services() {
                   src={service.image} 
                   alt={service.title}
                   fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-terracota/20 to-transparent" />
@@ -105,6 +107,7 @@ export default function Services() {
                   src={service.image} 
                   alt={service.title}
                   fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-terracota/20 to-transparent" />

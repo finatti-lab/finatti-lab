@@ -6,6 +6,7 @@ import Services from '@/components/sections/Services';
 import CTA from '@/components/sections/CTA';
 import Team from '@/components/sections/Team';
 import Contact from '@/components/sections/Contact';
+import Ouvidoria from '@/components/sections/Ouvidoria';
 import Footer from '@/components/sections/Footer';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
@@ -21,6 +22,7 @@ export default function Home() {
         <CTA />
         <Team />
         <Contact />
+        <Ouvidoria />
       </main>
       <Footer />
       <WhatsAppButton />

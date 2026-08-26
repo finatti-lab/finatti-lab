@@ -24,6 +24,7 @@ export default function Services() {
         'Citologia oncótica',
         'Exame colpocitológico',
         'Líquidos cavitários',
+        'Punção aspirativa por agulha fina (PAAF)',
         'Secreções e raspados',
       ],
     },

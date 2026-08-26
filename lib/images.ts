@@ -17,8 +17,9 @@ export const serviceImages = {
   imunoHistoquimica: '/images/servico-imuno-histoquimica.jpeg',
   patologiaMolecular: '/images/servico-patologia-molecular.jpeg',
   /**
-   * Punção aspirativa por agulha fina — imagem disponível, ainda sem card
-   * correspondente na seção de Serviços. Ver TODO no README/handoff.
+   * Punção aspirativa por agulha fina. A PAAF está listada como item do card de
+   * Citopatologia (mantendo a grade par de 4 cards), então esta imagem fica
+   * disponível para uso futuro — ex.: uma página dedicada ao exame.
    */
   paaf: '/images/servico-paaf.jpeg',
 };

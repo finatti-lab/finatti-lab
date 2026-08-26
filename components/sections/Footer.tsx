@@ -3,10 +3,11 @@
 import { Phone, Instagram, Star } from 'lucide-react';
 import Image from 'next/image';
 
-// TODO(cliente): quando o ID do Google Meu Negócio estiver disponível, trocar por
+// TODO(cliente): quando o place ID do Google Meu Negócio estiver disponível, trocar por
 // 'https://search.google.com/local/writereview?placeid=<PLACE_ID>' para abrir
 // direto o formulário de avaliação. Até lá, o link leva à ficha no Google Maps.
-const GOOGLE_REVIEW_URL = 'https://maps.app.goo.gl/CCvbrU1Ys1J7odEFh';
+const GOOGLE_REVIEW_URL =
+  'https://www.google.com/maps/search/?api=1&query=Finatti+Medicina+Diagn%C3%B3stica+Cianorte+PR';
 
 export default function Footer() {
   return (

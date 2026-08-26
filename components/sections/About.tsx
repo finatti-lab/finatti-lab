@@ -15,7 +15,7 @@ export default function About() {
         {/* Citação compacta */}
         <blockquote className="border-l-4 border-terracota pl-4 mb-8">
           <p className="text-base italic text-terracota font-medium leading-relaxed">
-            "Enxergamos o que outros não veem porque olhamos com propósito."
+            &ldquo;Enxergamos o que outros não veem porque olhamos com propósito.&rdquo;
           </p>
         </blockquote>
         
@@ -74,7 +74,7 @@ export default function About() {
             
             {/* Citação destacada com aspas grandes */}
             <blockquote className="border-l-4 border-terracota pl-6 relative max-w-3xl mx-auto">
-              <span className="absolute -left-2 -top-4 text-6xl text-terracota/20 font-serif">"</span>
+              <span className="absolute -left-2 -top-4 text-6xl text-terracota/20 font-serif">&ldquo;</span>
               <p className="text-2xl italic text-terracota font-medium leading-relaxed">
                 Enxergamos o que outros não veem porque olhamos com propósito.
               </p>

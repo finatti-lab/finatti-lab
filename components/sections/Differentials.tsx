@@ -1,7 +1,6 @@
 'use client';
 
 import { Microscope, Clock, Shield, Users, Award, Zap } from 'lucide-react';
-import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { useCallback } from 'react';

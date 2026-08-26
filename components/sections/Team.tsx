@@ -1,4 +1,3 @@
-import { Mail } from 'lucide-react';
 import Image from 'next/image';
 import Section from '../ui/Section';
 import SectionTitle from '../ui/SectionTitle';
@@ -59,7 +58,7 @@ export default function Team() {
       {/* Citação */}
       <blockquote className="mt-12 text-center max-w-3xl mx-auto px-4">
         <p className="text-lg italic text-stone-600">
-          "Juntos, construímos um laboratório onde cada exame é tratado com a seriedade que uma vida merece."
+          &ldquo;Juntos, construímos um laboratório onde cada exame é tratado com a seriedade que uma vida merece.&rdquo;
         </p>
         <cite className="text-terracota font-medium mt-2 block not-italic">— Finatti</cite>
       </blockquote>
